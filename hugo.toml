@@ -16,16 +16,16 @@ tags = "tags"
 categories = "categories"
 
 [params]
-title="TeXify3"
-author = "Michael Neuper"
-description = "TeXify3 - A LaTeX-style hugo theme with the gruvbox color scheme for personal blogging"
+title="Zhanxiong's Blog"
+author = "Zhanxiong Xu"
+description = "A desk for documenting daily thoughts and learning/problem solving experience"
 footnote = """
 Powered by  <a class=link href=https://gohugo.io target=_blank rel=noopener>Hugo</a> | 
 Theme <a class=link href=https://github.com/michaelneuper/hugo-texify3 target=_blank rel=noopener>TeXify3</a>
 """
 customCSS = []
 customJS = []
-dateFormat = "2 January 2006"
+dateFormat = "January 2, 2006"
 emphasisWithDots = true
 toc = true
 rootFontSize = "105%"
