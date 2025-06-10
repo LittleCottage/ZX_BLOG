@@ -43,11 +43,13 @@ $$
 
 The visualization of $V$ and $\Delta$ is shown in the figure below:
 
-<!-- ![case 1 visualization](/images/2025/case_1.png) -->
+![case 1 visualization](/images/2025/case_1.png)
 
+<!-- 
 <p align="center">
   <img src="/images/2025/case_1.png" alt="case 1 visualization" style="display: block; margin: 0 auto;" width="500"/>
 </p>
+-->
 
 Therefore, $(1)$ is equivalent to
 $$
@@ -67,11 +69,13 @@ $$
 
 The visualization of $V$, $\Delta$, $T_1$ and $T_2$ is shown in the figure below:
 
-<!-- ![case 2 visualization](/images/2025/case_2.png) -->
+![case 2 visualization](/images/2025/case_2.png)
 
+<!-- 
 <p align="center">
   <img src="/images/2025/case_2.png" alt="case 2 visualization" style="display: block; margin: 0 auto;" width="500"/>
 </p>
+-->
 
 From the 3D plot of $V$, it is clear that on $\Delta$, the integration interval for $z$ is $[0, 1]$, and on $T_1 \cup T_2$, the integration interval for $z$ is $[0, s - x - y]$. Therefore, $(1)$ is equivalent to
 $$
@@ -96,11 +100,13 @@ $$
 
 The visualization of $V$, $R$, $T$ and $\Delta$ is shown in the figure below:
 
-<!-- ![case 3 visualization](/images/2025/case_3.png) -->
+![case 3 visualization](/images/2025/case_3.png)
 
+<!-- 
 <p align="center">
   <img src="/images/2025/case_3.png" alt="case 3 visualization" style="display: block; margin: 0 auto;" width="500"/>
 </p>
+-->
 
 From the 3D plot of $V$, it is clear that on $R \cup T$, the integration interval for $z$ is $[0, 1]$, and on 
 $\Delta$, the integration interval for $z$ is $[0, s - x - y]$. Therefore, $(1)$ is equivalent to prove
@@ -130,10 +136,12 @@ The joint density $f(y, s)$ can be determined by following a classical recipe in
 In this case, for $0 < y < s$, $F(y, s)$ is a triple integration of $f(u, v, w) = \frac{1}{3}(u + 2v + 3w)$ on the pentahedron $V = \\{(u, v, w): u + v + w \leq s, 0 \leq u \leq 1, 0 \leq v \leq y\\}$. Note that the projection of $V$ onto the $u$-$v$ plane is a trapezoid $T = 
 \\{(u, v): 0 \leq u \leq s - v, 0 \leq v \leq y\\}$. See the figure below for the visualization of $V$ and $T$. 
 
-<!-- ![direct_eval](/images/2025/direct_eval.png) -->
+![direct_eval](/images/2025/direct_eval.png)
+<!-- 
 <p align="center">
   <img src="/images/2025/direct_eval.png" alt="direct eval" style="display: block; margin: 0 auto;" width="500"/>
 </p>
+-->
 
 Therefore,
 $$
