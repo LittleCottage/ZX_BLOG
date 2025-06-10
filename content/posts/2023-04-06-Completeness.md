@@ -1,6 +1,8 @@
 ---
 title: "Completeness of a Normal Family"
 date: 2023-04-06
+categories: ["Mathematics"]
+tags: ["Statistics", "Inference"]
 ---
 The problem is: How to show that $\\{N(\theta,1):\theta \in \Omega\\}$ is not a complete family of distributions when $\Omega$ is finite?
 
@@ -22,7 +24,7 @@ b + d &= 0, \\\\
 -4a + 2b - c + d &= 0. 
 \end{align*}
 $$
-One (of infinitely many) non-zero solution to $(2)$ is $a = -1, b = 0, c = 4, d = 0$, resulting $g(x) = -x^3 + 4x \neq 0$ (or more formally, $P_\theta(g(X) = 0) = P_\theta(X \in \{0, -2, 2\}) = 0 \neq 1$).  This shows that the family $\\{N(\theta, 1): \theta \in \Omega\\}$ is not complete. 
+One (of infinitely many) non-zero solution to $(2)$ is $a = -1, b = 0, c = 4, d = 0$, resulting $g(x) = -x^3 + 4x \neq 0$ (or more formally, $P_\theta(g(X) = 0) = P_\theta(X \in \\{0, -2, 2\\}) = 0 \neq 1$).  This shows that the family $\\{N(\theta, 1): \theta \in \Omega\\}$ is not complete. 
 
 -------------
 While the above construction works well for any parameter space with finite cardinality, it does not generalize to the case where the parameter space contains infinite members (e.g., the original linked exercise whose $\Omega = \\{1, 2, 3, \ldots\\}$). To deal with the latter case, note that, by the translation property of $\varphi_\theta$, the condition $E_\theta[g(X)] = 0$ for all $\theta \in \Omega$ is equivalent to  

@@ -78,3 +78,6 @@ numberedSubtitles = true
   whatsapp = true
   hackernews = true
   telegram = true
+
+[params.home]
+showTaxonomies = true

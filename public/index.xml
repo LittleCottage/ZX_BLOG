@@ -16,7 +16,7 @@
 &lt;p&gt;While Thomas Lumley has given you a heuristic answer, I agree that you are absolutely entitled to request a more rigorous argument.&lt;/p&gt;
 &lt;p&gt;The direction $(b) \Rightarrow (a)$ is an immediate application of the theorem below (Lemma 8.7 in Foundations of Modern Probability (3rd edition) by Olav Kallenberg):&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;For any random elements $\xi \perp \eta$ in $S, T$ and a measurable function $f: S \times T \to U$, where $S, T, U$ are Borel, define $X = f(\xi, \eta)$. Then $\mathcal{L}(X \mid \xi) = \mathcal{L}{f(x, \eta)}|_{x = \xi}$ a.s.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;For any random elements $\xi \perp \eta$ in $S, T$ and a measurable function $f: S \times T \to U$, where $S, T, U$ are Borel, define $X = f(\xi, \eta)$. Then $\mathcal{L}(X \mid \xi) = \mathcal{L}\{f(x, \eta)\}|_{x = \xi}$ a.s.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Here &amp;ldquo;$\mathcal{L}(X)$ / $\mathcal{L}(X \mid \xi)$&amp;rdquo; denotes the law (i.e., distribution) of $X$ / conditional law of $X$ given $\xi$. To apply this result, simply let $\xi = X_{t - 1}, \eta = Z_t$, and $X = X_t = \sqrt{1 - \beta_t}X_{t - 1} + \sqrt{\beta_t}Z_t$. If you are interested in the proof to this lemma, check the reference by yourself.&lt;/p&gt;
 &lt;p&gt;For the direction $(a) \Rightarrow (b)$, it suffices to prove the conditional distribution of $Z_t := \beta_t^{-1/2}(X_t - \sqrt{1 - \beta_t}X_{t - 1})$ given $X_{t - 1}$ is $N(0, I)$, hence it is independent of $X_{t - 1}$. To this end, we can apply Theorem 8.5(ii) in the same reference (which concerns with the disintegration of the joint distribution of $(X_{t - 1}, X_t)$).  By this theorem, for a Borel set $H \in \mathscr{R}^n$, we have (where the notation $aH + b$ denotes the set ${ax + b: x \in H}$):
 $$
@@ -55,7 +55,7 @@ b + d &amp;amp;= 0, \\
 -4a + 2b - c + d &amp;amp;= 0.
 \end{align*}
 $$
-One (of infinitely many) non-zero solution to $(2)$ is $a = -1, b = 0, c = 4, d = 0$, resulting $g(x) = -x^3 + 4x \neq 0$ (or more formally, $P_\theta(g(X) = 0) = P_\theta(X \in {0, -2, 2}) = 0 \neq 1$).  This shows that the family $\{N(\theta, 1): \theta \in \Omega\}$ is not complete.&lt;/p&gt;
+One (of infinitely many) non-zero solution to $(2)$ is $a = -1, b = 0, c = 4, d = 0$, resulting $g(x) = -x^3 + 4x \neq 0$ (or more formally, $P_\theta(g(X) = 0) = P_\theta(X \in \{0, -2, 2\}) = 0 \neq 1$).  This shows that the family $\{N(\theta, 1): \theta \in \Omega\}$ is not complete.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;While the above construction works well for any parameter space with finite cardinality, it does not generalize to the case where the parameter space contains infinite members (e.g., the original linked exercise whose $\Omega = \{1, 2, 3, \ldots\}$). To deal with the latter case, note that, by the translation property of $\varphi_\theta$, the condition $E_\theta[g(X)] = 0$ for all $\theta \in \Omega$ is equivalent to&lt;br&gt;
 $$
