@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/ZX_BLOG/categories/</loc>
+    <lastmod>2025-06-10T10:21:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/posts/2025-06-09-gaussian/</loc>
     <lastmod>2025-06-09T23:27:22-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/2025-06-09-gaussian/</loc>
+    <loc>http://localhost:1313/ZX_BLOG/tags/markov-chain/</loc>
     <lastmod>2025-06-09T23:27:22-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/markov-chain/</loc>
+    <loc>http://localhost:1313/ZX_BLOG/categories/mathematics/</loc>
+    <lastmod>2025-06-10T10:21:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/posts/</loc>
+    <lastmod>2025-06-10T10:21:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/tags/statistics/</loc>
+    <lastmod>2025-06-10T10:21:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/tags/</loc>
+    <lastmod>2025-06-10T10:21:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/posts/2025-01-26-ce-evaluation/</loc>
+    <lastmod>2025-06-10T10:21:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/tags/conditional-expectation/</loc>
+    <lastmod>2025-06-10T10:21:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/tags/python/</loc>
+    <lastmod>2025-06-10T10:21:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/posts/2023-04-06-completeness/</loc>
     <lastmod>2025-06-09T23:27:22-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/mathematics/</loc>
+    <loc>http://localhost:1313/ZX_BLOG/tags/inference/</loc>
     <lastmod>2025-06-09T23:27:22-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/statistics/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2025-01-26-ce-evaluation/</loc>
-    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/conditional-expectation/</loc>
-    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/2023-04-06-completeness/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/inference/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/ZX_BLOG/</loc>
     <lastmod>2025-06-09T17:42:23-04:00</lastmod>
   </url>
 </urlset>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Zhanxiong&#39;s Blog</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>http://localhost:1313/ZX_BLOG/tags/python/</link>
     <description>Recent content in Python on Zhanxiong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Interesting Conditional Expectation Problem</title>
-      <link>http://localhost:1313/posts/2025-01-26-ce-evaluation/</link>
+      <link>http://localhost:1313/ZX_BLOG/posts/2025-01-26-ce-evaluation/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/2025-01-26-ce-evaluation/</guid>
+      <guid>http://localhost:1313/ZX_BLOG/posts/2025-01-26-ce-evaluation/</guid>
       <description>&lt;p&gt;The problem is posted on &lt;a href=&#34;https://stats.stackexchange.com/questions/660531/conditional-expectation-when-there-are-no-symmetries&#34;&gt;CrossValidated&lt;/a&gt; by a Spanish professor. It is stated as:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Suppose $(X, Y, Z) \sim f(x, y, z) = \frac{1}{3}(x + 2y + 3z), 0 &amp;lt; x, y, z &amp;lt; 1$ and $S = X + Y + Z$. Prove that $E[Y \mid S] = \frac{S}{3}$.&lt;/p&gt;&lt;/blockquote&gt;
@@ -47,7 +47,7 @@ $$&lt;/p&gt;
 &lt;p&gt;The visualization of $V$ and $\Delta$ is shown in the figure below:&lt;/p&gt;
 &lt;!-- ![case 1 visualization](/images/2025/case_1.png) --&gt;
 &lt;p align=&#34;center&#34;&gt;
-  &lt;img src=&#34;http://localhost:1313/images/2025/case_1.png&#34; alt=&#34;case 1 visualization&#34; style=&#34;display: block; margin: 0 auto;&#34; width=&#34;400&#34;/&gt;
+  &lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/case_1.png&#34; alt=&#34;case 1 visualization&#34; style=&#34;display: block; margin: 0 auto;&#34; width=&#34;500&#34;/&gt;
 &lt;/p&gt;
 &lt;p&gt;Therefore, $(1)$ is equivalent to
 $$
@@ -64,7 +64,10 @@ $$
 \end{align*}
 $$&lt;/p&gt;
 &lt;p&gt;The visualization of $V$, $\Delta$, $T_1$ and $T_2$ is shown in the figure below:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/2025/case_2.png&#34; alt=&#34;case 2 visualization&#34;&gt;&lt;/p&gt;
+&lt;!-- ![case 2 visualization](/images/2025/case_2.png) --&gt;
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/case_2.png&#34; alt=&#34;case 2 visualization&#34; style=&#34;display: block; margin: 0 auto;&#34; width=&#34;500&#34;/&gt;
+&lt;/p&gt;
 &lt;p&gt;From the 3D plot of $V$, it is clear that on $\Delta$, the integration interval for $z$ is $[0, 1]$, and on $T_1 \cup T_2$, the integration interval for $z$ is $[0, s - x - y]$. Therefore, $(1)$ is equivalent to
 $$
 \begin{align*}
@@ -84,7 +87,10 @@ $$
 \end{align*}
 $$&lt;/p&gt;
 &lt;p&gt;The visualization of $V$, $R$, $T$ and $\Delta$ is shown in the figure below:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/2025/case_3.png&#34; alt=&#34;case 3 visualization&#34;&gt;&lt;/p&gt;
+&lt;!-- ![case 3 visualization](/images/2025/case_3.png) --&gt;
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/case_3.png&#34; alt=&#34;case 3 visualization&#34; style=&#34;display: block; margin: 0 auto;&#34; width=&#34;500&#34;/&gt;
+&lt;/p&gt;
 &lt;p&gt;From the 3D plot of $V$, it is clear that on $R \cup T$, the integration interval for $z$ is $[0, 1]$, and on
 $\Delta$, the integration interval for $z$ is $[0, s - x - y]$. Therefore, $(1)$ is equivalent to prove
 $$
@@ -107,7 +113,10 @@ $$&lt;/p&gt;
 &lt;p&gt;The joint density $f(y, s)$ can be determined by following a classical recipe in elementary probability, that is, by first evaluating the probability $F(y, s) := P(Y \leq y, S \leq s)$ then taking second-order partial derivative with respect to $s$ and $y$. As we have seen in the earlier proof, depending on where $s$ is located, the difficulty of computing $F(y, s)$ varies. Nevertheless, the key idea of converting a triple integration to an iterative integration by carefully gauging integration limits for $(x, y, z)$ stays the same. Below I illustrate this process for the (simplest) case $s \in (0, 1]$.&lt;/p&gt;
 &lt;p&gt;In this case, for $0 &amp;lt; y &amp;lt; s$, $F(y, s)$ is a triple integration of $f(u, v, w) = \frac{1}{3}(u + 2v + 3w)$ on the pentahedron $V = \{(u, v, w): u + v + w \leq s, 0 \leq u \leq 1, 0 \leq v \leq y\}$. Note that the projection of $V$ onto the $u$-$v$ plane is a trapezoid $T =
 \{(u, v): 0 \leq u \leq s - v, 0 \leq v \leq y\}$. See the figure below for the visualization of $V$ and $T$.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/2025/direct_eval.png&#34; alt=&#34;direct_eval&#34;&gt;&lt;/p&gt;
+&lt;!-- ![direct_eval](/images/2025/direct_eval.png) --&gt;
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/direct_eval.png&#34; alt=&#34;direct eval&#34; style=&#34;display: block; margin: 0 auto;&#34; width=&#34;500&#34;/&gt;
+&lt;/p&gt;
 &lt;p&gt;Therefore,
 $$
 \begin{align*}
