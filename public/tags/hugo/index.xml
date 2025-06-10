@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Zhanxiong&#39;s Blog</title>
+    <link>http://localhost:1313/ZX_BLOG/tags/hugo/</link>
+    <description>Recent content in Hugo on Zhanxiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rendering Images in GitHub Pages</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2025-06-10-hugoimages/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2025-06-10-hugoimages/</guid>
+      <description>&lt;p&gt;When I built my &lt;a href=&#34;https://littlecottage.github.io/ZX_BLOG/&#34;&gt;personal blog site&lt;/a&gt; with &lt;a href=&#34;https://themes.gohugo.io/themes/hugo-texify3/&#34;&gt;Hugo Texify3&lt;/a&gt; and tried deploying it &lt;a href=&#34;https://gohugo.io/host-and-deploy/host-on-github-pages/&#34;&gt;using GitHub Pages&lt;/a&gt;, something very weird happend: for &lt;a href=&#34;https://littlecottage.github.io/ZX_BLOG/posts/2025-01-26-ce-evaluation/&#34;&gt;a blog&lt;/a&gt; containing images, while those images can be shown locally under the URL &lt;code&gt;http://localhost:1313&lt;/code&gt;, they cannot be rendered under GitHub Pages.&lt;/p&gt;
+&lt;p&gt;After muddling this issue with GitHub Copilot embedded in VS Code for hours, eventually ChatGPT saved my day. The reason is actually simple: in the post, the image was initially referenced as&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![case 1 visualization](/images/2025/case_1.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This works fine locally (it resolves to &lt;code&gt;./static/images/2025/case_1.png&lt;/code&gt;) but breaks remotely (it resolves to &lt;code&gt;https://littlecottage.github.io/public/images/2025/case_1/png&lt;/code&gt; while the correct location is &lt;code&gt;https://littlecottage.github.io/ZX_BLOG/public/images/2025/case_1/png&lt;/code&gt;).  So a quick fix is update the reference to&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![case 1 visualization](/ZX_BLOG/images/2025/case_1.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;so that it resolves to the correct path both locally and remotely. To ensure that the path was searched in an absolute way rather than relatively, aslo add&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;canonifyURLs = true
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;to the &lt;code&gt;hugo.toml&lt;/code&gt; configuration file so that Hugo converts all relative URLs to absolute URLs using &lt;code&gt;baseURL = https://littlecottage.github.io/ZX_BLOG/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The learned lesson is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;When an object failed to display in the browser, 99% is a path specification issue.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Trust ChatGPT more than Copilot.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
