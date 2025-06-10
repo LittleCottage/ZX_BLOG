@@ -71,7 +71,12 @@ $$
 \end{align*}
 $$&lt;/p&gt;
 &lt;p&gt;The visualization of $V$ and $\Delta$ is shown in the figure below:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/case_1.png&#34; alt=&#34;case 1 visualization&#34;&gt;&lt;/p&gt;
+&lt;!-- ![case 1 visualization](/images/2025/case_1.png) --&gt;
+&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/case_1.png&#34;&gt;&lt;figcaption&gt;
+      &lt;h4&gt;case 1 visualization&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;!-- 
 &lt;p align=&#34;center&#34;&gt;
   &lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/case_1.png&#34; alt=&#34;case 1 visualization&#34; style=&#34;display: block; margin: 0 auto;&#34; width=&#34;500&#34;/&gt;
