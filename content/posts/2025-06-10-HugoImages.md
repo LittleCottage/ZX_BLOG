@@ -32,3 +32,5 @@ The learned lesson is:
 1. When an object failed to display in the browser, 99% is a path specification issue.
 
 2. Trust ChatGPT more than Copilot. 
+
+A complete chat history with ChatGPT [is here](https://chatgpt.com/share/68488b35-6a9c-8012-8bf3-0013a4bc95f2). 
