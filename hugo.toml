@@ -1,4 +1,4 @@
-baseURL = "https://littlecottage.github.io/ZX_BLOG/"
+baseURL = "https://littlecottage.github.io/ZX_BLOG"
 disqusShortname = ""
 enableGitInfo = true
 enableRobotsTXT = true

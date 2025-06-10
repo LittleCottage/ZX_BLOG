@@ -43,8 +43,7 @@ $$
 
 The visualization of $V$ and $\Delta$ is shown in the figure below:
 
-<!-- ![case 1 visualization](/images/2025/case_1.png) -->
-{{< figure src="images/2025/case_1.png" title="case 1 visualization" >}}
+![case 1 visualization](/images/2025/case_1.png)
 
 <!-- 
 <p align="center">
