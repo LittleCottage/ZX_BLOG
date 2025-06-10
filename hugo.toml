@@ -81,3 +81,8 @@ numberedSubtitles = true
 
 [params.home]
 showTaxonomies = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
