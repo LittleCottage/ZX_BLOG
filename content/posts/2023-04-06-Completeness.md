@@ -1,8 +1,8 @@
 ---
 title: "Completeness of a Normal Family"
 date: 2023-04-06
-categories: ["Mathematics"]
-tags: ["Statistics", "Inference"]
+categories: ["Statistics"]
+tags: ["Mathematical Statistics", "Completeness"]
 ---
 The problem is: How to show that $\\{N(\theta,1):\theta \in \Omega\\}$ is not a complete family of distributions when $\Omega$ is finite?
 

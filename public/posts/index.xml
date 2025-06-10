@@ -13,12 +13,12 @@
       <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/ZX_BLOG/posts/2025-06-10-hugoimages/</guid>
-      <description>&lt;p&gt;When I built my &lt;a href=&#34;https://littlecottage.github.io/ZX_BLOG/&#34;&gt;personal blog site&lt;/a&gt; with &lt;a href=&#34;https://themes.gohugo.io/themes/hugo-texify3/&#34;&gt;Hugo Texify3&lt;/a&gt; and tried deploying it &lt;a href=&#34;https://gohugo.io/host-and-deploy/host-on-github-pages/&#34;&gt;using GitHub Pages&lt;/a&gt;, something very weird happend: for &lt;a href=&#34;https://littlecottage.github.io/ZX_BLOG/posts/2025-01-26-ce-evaluation/&#34;&gt;a blog&lt;/a&gt; containing images, while those images can be shown locally under the URL &lt;code&gt;http://localhost:1313&lt;/code&gt;, they cannot be rendered under GitHub Pages.&lt;/p&gt;
+      <description>&lt;p&gt;When I built my &lt;a href=&#34;https://littlecottage.github.io/ZX_BLOG/&#34;&gt;personal blog site&lt;/a&gt; with &lt;a href=&#34;https://themes.gohugo.io/themes/hugo-texify3/&#34;&gt;Hugo Texify3&lt;/a&gt; and tried deploying it &lt;a href=&#34;https://gohugo.io/host-and-deploy/host-on-github-pages/&#34;&gt;using GitHub Pages&lt;/a&gt;, something very weird happened: for &lt;a href=&#34;https://littlecottage.github.io/ZX_BLOG/posts/2025-01-26-ce-evaluation/&#34;&gt;a blog&lt;/a&gt; containing images, while those images can be shown locally under the URL &lt;code&gt;http://localhost:1313&lt;/code&gt;, they cannot be rendered under GitHub Pages.&lt;/p&gt;
 &lt;p&gt;After muddling this issue with GitHub Copilot embedded in VS Code for hours, eventually ChatGPT saved my day. The reason is actually simple: in the post, the image was initially referenced as&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![case 1 visualization](/images/2025/case_1.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This works fine locally (it resolves to &lt;code&gt;./static/images/2025/case_1.png&lt;/code&gt;) but breaks remotely (it resolves to &lt;code&gt;https://littlecottage.github.io/public/images/2025/case_1/png&lt;/code&gt; while the correct location is &lt;code&gt;https://littlecottage.github.io/ZX_BLOG/public/images/2025/case_1/png&lt;/code&gt;).  So a quick fix is update the reference to&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This works fine locally (it resolves to &lt;code&gt;./static/images/2025/case_1.png&lt;/code&gt;) but breaks remotely (it resolves to &lt;code&gt;https://littlecottage.github.io/public/images/2025/case_1/png&lt;/code&gt; while the correct location is &lt;code&gt;https://littlecottage.github.io/ZX_BLOG/public/images/2025/case_1/png&lt;/code&gt;).  So a quick fix is updating the reference to&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;![case 1 visualization](/ZX_BLOG/images/2025/case_1.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;so that it resolves to the correct path both locally and remotely. To ensure that the path was searched in an absolute way rather than relatively, aslo add&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;so that it resolves to the correct path both locally and remotely. To ensure that the path was searched in an absolute way rather than relatively, then adding the statement&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;canonifyURLs = true
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;to the &lt;code&gt;hugo.toml&lt;/code&gt; configuration file so that Hugo converts all relative URLs to absolute URLs using &lt;code&gt;baseURL = https://littlecottage.github.io/ZX_BLOG/&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The learned lesson is:&lt;/p&gt;
@@ -30,6 +30,7 @@
 &lt;p&gt;Trust ChatGPT more than Copilot.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;A complete chat history with ChatGPT &lt;a href=&#34;https://chatgpt.com/share/68488b35-6a9c-8012-8bf3-0013a4bc95f2&#34;&gt;is here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -56,6 +57,31 @@ $$
 \end{align*}
 $$&lt;/p&gt;
 &lt;p&gt;where the last step uses the transformation $z = \beta_t^{-n/2}(x - \sqrt{1 - \beta_t}X_{t - 1})$ and the property of the Lebesgue integration. The last expression shows that the conditional distribution of $Z_t$ given $X_{t - 1}$ is exactly $N(0, I)$.  This completes the proof.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Geometric Intuition for a Variance Identity</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2025-03-17-variance/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2025-03-17-variance/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://stats.stackexchange.com/questions/662731/geometric-intuition-for-the-identity-operatornamevarx-y-operatorname&#34;&gt;question&lt;/a&gt; is: what is geometric intuition for the identity $\operatorname{Var}(X + Y) = $\operatorname{Var}(X - Y)$ given that $X$ and $Y$ are independent?&lt;/p&gt;
+&lt;p&gt;To interpret this identity geometrically, it is helpful to view $\operatorname{Var}(X + Y)$ and $\operatorname{Var}(X - Y)$ as norms in the Hilbert space $L^2(\Omega, \mathscr{F}, P)$ equipped with inner product $\langle X, Y \rangle = E[XY]$.&lt;/p&gt;
+&lt;p&gt;To this end, write $\operatorname{Var}(X + Y)$ and $\operatorname{Var}(X - Y)$ as
+$$
+\begin{align*}
+&amp;amp; \operatorname{Var}(X + Y) =
+E{[(X - \mu_X) + (Y - \mu_Y)]^2} = |(X - \mu_X) + (Y - \mu_Y)|^2, \
+&amp;amp; \operatorname{Var}(X - Y) =
+E{[(X - \mu_X) - (Y - \mu_Y)]^2} = |(X - \mu_X) - (Y - \mu_Y)|^2.
+\end{align*}
+$$&lt;/p&gt;
+&lt;p&gt;Therefore, by viewing $X - \mu_X$ and $Y - \mu_Y$ as two vectors in $L^2(\Omega, \mathscr{F}, P)$, $\operatorname{Var}(X + Y)$ and $\operatorname{Var}(X - Y)$ are squared lengths of the blue diagonal and the red diagonal in the parallelogram below respectively.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/var_general.png&#34; alt=&#34;variance general case&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When $X$ and $Y$ are independent, $X - \mu_X$ and $Y - \mu_Y$ are clearly independent too, which means that $X - \mu_X$ and $Y - \mu_Y$ are orthogonal. That is, the parallelogram in the above diagram becomes a rectangle as shown below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/var_independent.png&#34; alt=&#34;variance independent case&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As diagonals in a rectangle are of the same length, we obtain $\operatorname{Var}(X + Y) = \operatorname{Var}(X - Y)$ geometrically.&lt;/p&gt;
 </description>
     </item>
     

@@ -5,7 +5,7 @@ categories: ["Today I Learned"]
 tags: ["Coding", "Hugo", "GitHub", "Frontend"]
 ---
 
-When I built my [personal blog site](https://littlecottage.github.io/ZX_BLOG/) with [Hugo Texify3](https://themes.gohugo.io/themes/hugo-texify3/) and tried deploying it [using GitHub Pages](https://gohugo.io/host-and-deploy/host-on-github-pages/), something very weird happend: for [a blog](https://littlecottage.github.io/ZX_BLOG/posts/2025-01-26-ce-evaluation/) containing images, while those images can be shown locally under the URL `http://localhost:1313`, they cannot be rendered under GitHub Pages. 
+When I built my [personal blog site](https://littlecottage.github.io/ZX_BLOG/) with [Hugo Texify3](https://themes.gohugo.io/themes/hugo-texify3/) and tried deploying it [using GitHub Pages](https://gohugo.io/host-and-deploy/host-on-github-pages/), something very weird happened: for [a blog](https://littlecottage.github.io/ZX_BLOG/posts/2025-01-26-ce-evaluation/) containing images, while those images can be shown locally under the URL `http://localhost:1313`, they cannot be rendered under GitHub Pages. 
 
 After muddling this issue with GitHub Copilot embedded in VS Code for hours, eventually ChatGPT saved my day. The reason is actually simple: in the post, the image was initially referenced as 
 

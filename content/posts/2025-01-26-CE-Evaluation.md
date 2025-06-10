@@ -1,8 +1,8 @@
 ---
 title: "An Interesting Conditional Expectation Problem"
 date: 2025-01-26
-categories: ["Mathematics"]
-tags: ["Statistics", "Conditional Expectation", "Python"]
+categories: ["Probability"]
+tags: ["Computation", "Conditional Expectation", "Python", "Graphics"]
 ---
 
 The problem is posted on [CrossValidated](https://stats.stackexchange.com/questions/660531/conditional-expectation-when-there-are-no-symmetries) by a Spanish professor. It is stated as:

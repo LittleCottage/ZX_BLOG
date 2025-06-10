@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intuition on Zhanxiong&#39;s Blog</title>
+    <link>http://localhost:1313/ZX_BLOG/tags/intuition/</link>
+    <description>Recent content in Intuition on Zhanxiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 17 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/tags/intuition/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Geometric Intuition for a Variance Identity</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2025-03-17-variance/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2025-03-17-variance/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://stats.stackexchange.com/questions/662731/geometric-intuition-for-the-identity-operatornamevarx-y-operatorname&#34;&gt;question&lt;/a&gt; is: what is geometric intuition for the identity $\operatorname{Var}(X + Y) = $\operatorname{Var}(X - Y)$ given that $X$ and $Y$ are independent?&lt;/p&gt;
+&lt;p&gt;To interpret this identity geometrically, it is helpful to view $\operatorname{Var}(X + Y)$ and $\operatorname{Var}(X - Y)$ as norms in the Hilbert space $L^2(\Omega, \mathscr{F}, P)$ equipped with inner product $\langle X, Y \rangle = E[XY]$.&lt;/p&gt;
+&lt;p&gt;To this end, write $\operatorname{Var}(X + Y)$ and $\operatorname{Var}(X - Y)$ as
+$$
+\begin{align*}
+&amp;amp; \operatorname{Var}(X + Y) =
+E{[(X - \mu_X) + (Y - \mu_Y)]^2} = |(X - \mu_X) + (Y - \mu_Y)|^2, \
+&amp;amp; \operatorname{Var}(X - Y) =
+E{[(X - \mu_X) - (Y - \mu_Y)]^2} = |(X - \mu_X) - (Y - \mu_Y)|^2.
+\end{align*}
+$$&lt;/p&gt;
+&lt;p&gt;Therefore, by viewing $X - \mu_X$ and $Y - \mu_Y$ as two vectors in $L^2(\Omega, \mathscr{F}, P)$, $\operatorname{Var}(X + Y)$ and $\operatorname{Var}(X - Y)$ are squared lengths of the blue diagonal and the red diagonal in the parallelogram below respectively.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/var_general.png&#34; alt=&#34;variance general case&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When $X$ and $Y$ are independent, $X - \mu_X$ and $Y - \mu_Y$ are clearly independent too, which means that $X - \mu_X$ and $Y - \mu_Y$ are orthogonal. That is, the parallelogram in the above diagram becomes a rectangle as shown below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/ZX_BLOG/images/2025/var_independent.png&#34; alt=&#34;variance independent case&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As diagonals in a rectangle are of the same length, we obtain $\operatorname{Var}(X + Y) = \operatorname{Var}(X - Y)$ geometrically.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
