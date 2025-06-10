@@ -1,4 +1,5 @@
 baseURL = "https://littlecottage.github.io/ZX_BLOG/"
+canonifyURLs = true
 disqusShortname = ""
 enableGitInfo = true
 enableRobotsTXT = true
