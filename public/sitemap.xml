@@ -3,79 +3,88 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/ZX_BLOG/categories/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:56:47-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/coding/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/frontend/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/github/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/hugo/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/posts/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:56:47-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/posts/2025-06-10-hugoimages/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:56:47-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/categories/today-i-learned/</loc>
-    <lastmod>2025-06-10T15:47:39-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/posts/2025-06-09-gaussian/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/kernel/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/measure-theory/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/categories/probability/</loc>
-    <lastmod>2025-06-10T14:25:14-04:00</lastmod>
+    <lastmod>2025-06-10T16:56:47-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/posts/2025-03-17-variance/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-10T16:56:47-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/geometry/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-10T16:56:47-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/intuition/</loc>
-    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-10T16:56:47-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/posts/2025-01-26-ce-evaluation/</loc>
-    <lastmod>2025-06-10T14:25:14-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/computation/</loc>
-    <lastmod>2025-06-10T14:25:14-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/conditional-expectation/</loc>
-    <lastmod>2025-06-10T14:25:14-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/graphics/</loc>
-    <lastmod>2025-06-10T14:25:14-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/tags/python/</loc>
-    <lastmod>2025-06-10T14:25:14-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ZX_BLOG/tags/completeness/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
+    <loc>http://localhost:1313/ZX_BLOG/posts/2023-11-14-r-squared/</loc>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ZX_BLOG/posts/2023-04-06-completeness/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
+    <loc>http://localhost:1313/ZX_BLOG/tags/correlation/</loc>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ZX_BLOG/tags/mathematical-statistics/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
+    <loc>http://localhost:1313/ZX_BLOG/tags/linear-models/</loc>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/categories/statistics/</loc>
-    <lastmod>2025-06-09T23:27:22-04:00</lastmod>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/tags/completeness/</loc>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/posts/2023-04-06-completeness/</loc>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ZX_BLOG/tags/mathematical-statistics/</loc>
+    <lastmod>2025-06-10T16:51:25-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ZX_BLOG/</loc>
     <lastmod>2025-06-09T17:42:23-04:00</lastmod>
