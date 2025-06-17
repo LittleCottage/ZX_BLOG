@@ -73,7 +73,7 @@ While Thomas Lumley has given you a heuristic answer, I agree that you are absol
 While Thomas Lumley has given you a heuristic answer, I agree that you are absolutely entitled to request a more rigorous argument.">
   <meta itemprop="datePublished" content="2025-06-09T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-06-10T16:51:25-04:00">
-  <meta itemprop="wordCount" content="392">
+  <meta itemprop="wordCount" content="452">
   <meta itemprop="keywords" content="Measure Theory,Kernel">
 
   
@@ -176,7 +176,7 @@ While Thomas Lumley has given you a heuristic answer, I agree that you are absol
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          392 words
+          452 words
         </span>
       
       
@@ -189,7 +189,7 @@ While Thomas Lumley has given you a heuristic answer, I agree that you are absol
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          ~2 mins
+          ~3 mins
         </span>
       
     </div>
@@ -216,7 +216,14 @@ While Thomas Lumley has given you a heuristic answer, I agree that you are absol
 <blockquote>
 <p>For any random elements $\xi \perp \eta$ in $S, T$ and a measurable function $f: S \times T \to U$, where $S, T, U$ are Borel, define $X = f(\xi, \eta)$. Then $\mathcal{L}(X \mid \xi) = \mathcal{L}\{f(x, \eta)\}|_{x = \xi}$ a.s.</p></blockquote>
 <p>Here &ldquo;$\mathcal{L}(X)$ / $\mathcal{L}(X \mid \xi)$&rdquo; denotes the law (i.e., distribution) of $X$ / conditional law of $X$ given $\xi$. To apply this result, simply let $\xi = X_{t - 1}, \eta = Z_t$, and $X = X_t = \sqrt{1 - \beta_t}X_{t - 1} + \sqrt{\beta_t}Z_t$. If you are interested in the proof to this lemma, check the reference by yourself.</p>
-<p>For the direction $(a) \Rightarrow (b)$, it suffices to prove the conditional distribution of $Z_t := \beta_t^{-1/2}(X_t - \sqrt{1 - \beta_t}X_{t - 1})$ given $X_{t - 1}$ is $N(0, I)$, hence it is independent of $X_{t - 1}$. To this end, we can apply Theorem 8.5(ii) in the same reference (which concerns with the disintegration of the joint distribution of $(X_{t - 1}, X_t)$).  By this theorem, for a Borel set $H \in \mathscr{R}^n$, we have (where the notation $aH + b$ denotes the set ${ax + b: x \in H}$):
+<p>For the direction $(a) \Rightarrow (b)$, it suffices to prove the conditional distribution of $Z_t := \beta_t^{-1/2}(X_t - \sqrt{1 - \beta_t}X_{t - 1})$ given $X_{t - 1}$ is $N(0, I)$, hence it is independent of $X_{t - 1}$. To this end, we can apply Theorem 8.5(ii) in the same reference (which concerns with the disintegration of the joint distribution of $(X_{t - 1}, X_t)$):</p>
+<blockquote>
+<p><strong>Theorem</strong> (conditional distributions, disintegration) Let $\xi, \eta$ be random elements in $S, T$, where $T$ is Borel.  Then $\mathcal{L}(\xi, \eta) = \mathcal{L}(\xi) \otimes \mu$ for a probability kernel $\mu: S \to T$, where $\mu$ is unique a.e. $\mathcal{L}(\xi)$ and satisfies</p>
+<ol>
+<li>$\mathcal{L}(\eta \mid \xi) = \mu(\xi, \cdot)$ a.s.,</li>
+<li>$E\{f(\xi, \eta) \mid \xi\} = \int \mu(\xi, dt)f(\xi, t)$, a.s., $f \geq 0$.</li>
+</ol></blockquote>
+<p>By this theorem, for a Borel set $H \in \mathscr{R}^n$, we have (where the notation $aH + b$ denotes the set ${ax + b: x \in H}$):
 $$
 \begin{align*}
 &amp;\ P(Z_t \in H \mid X_{t - 1}) \\
