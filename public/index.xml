@@ -13,10 +13,18 @@
       
       <guid>http://localhost:1313/ZX_BLOG/posts/2025-09-06-stoppingtime/</guid>
       <description>&lt;p&gt;In Section 35 of &lt;em&gt;Probability and Measure&lt;/em&gt;, after defining the $\sigma$-field $\mathscr{F}_\tau$ associated with a stopping time $\tau$, Billingsley wrote:&lt;/p&gt;
-&lt;p&gt;If $\tau(\omega) &amp;lt; \infty$ for all $\omega$ and $\mathscr{F}&lt;em&gt;n = \sigma(X_1, \ldots, X_n)$,
-then $I_A(\omega) = I_A(\omega&amp;rsquo;)$ for all $A$ in $\mathscr{F}$ if and only if $X_i(\omega_1) = X_i(\omega_2)$ for $i \leq \tau(\omega_1) = \tau(\omega_2)$: The information in $\mathscr{F}$
-consists of values $\tau(\omega), X_1(\omega), \ldots, X&lt;/em&gt;{\tau(\omega)}(\omega)$.&lt;/p&gt;
-&lt;p&gt;How to verify this statement?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If $\tau(\omega) &amp;lt; \infty$ for all $\omega$ and $\mathscr{F}_n = \sigma(X_1, \ldots, X_n)$, then $I_A(\omega) = I_A(\omega&amp;rsquo;)$ for all $A$ in $\mathscr{F}$ if and only if $X_i(\omega_1) = X_i(\omega_2)$ for $i \leq \tau(\omega_1) = \tau(\omega_2)$: The information in $\mathscr{F}$ consists of values $\tau(\omega), X_1(\omega), \ldots, X_{\tau(\omega)}(\omega)$.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;How to verify this statement? Below is the proof.&lt;/p&gt;
+&lt;p&gt;Suppose $I_A(\omega) = I_A(\omega&amp;rsquo;)$ for all $A \in \mathscr{F}_\tau$. If $\tau(\omega) \neq \tau(\omega&amp;rsquo;)$, say $\tau(\omega) = i &amp;lt; j = \tau(\omega&amp;rsquo;)$,
+then for the set $A = [\tau = j] \in \mathscr{F}_\tau$, we have $\omega \not\in A$ but $\omega&amp;rsquo; \in A$, contradiction.  Hence $\tau(\omega) = \tau(\omega&amp;rsquo;) =: N$.  Next, we show that $X_i(\omega) = X_i(\omega&amp;rsquo;)$ for $i \leq N$.  Consider the
+set $A := [X_i = X_i(\omega), i \leq N] \cap [\tau = N]$.  It is a member of $\mathscr{F}_\tau$, because $A \cap [\tau \leq i] = \varnothing \in \mathscr{F}_i$ for $i &amp;lt; N$ and $A \cap [\tau \leq i] = A \cap [\tau = N] \in \mathscr{F}_i$ for $i \geq N$. Since $\omega \in A$ trivially,
+it follows by the assumption that $\omega&amp;rsquo; \in A$, which means that $X_i(\omega&amp;rsquo;) = X_i(\omega)$ for $i \leq N$.&lt;/p&gt;
+&lt;p&gt;Conversely, suppose $X_i(\omega) = X_i(\omega&amp;rsquo;)$ for all $i \leq \tau(\omega) = \tau(\omega&amp;rsquo;) =: N$ and let $A \in \mathscr{F}_\tau$. If $\omega \in A$, then $\omega \in A \cap [\tau \leq N] \in \mathscr{F}_N$, meaning that
+$\omega \in A \cap [\tau \leq N] := [(X_1, \ldots, X_N) \in H]$ for some $H \in \mathscr{R}^N$, i.e.,
+$(X_1(\omega), \ldots, X_N(\omega)) \in H$. By condition, we have $(X_1(\omega&amp;rsquo;), \ldots, X_N(\omega&amp;rsquo;)) \in H$, whence $\omega&amp;rsquo; \in A \cap [\tau \leq N]$, which implies that $\omega&amp;rsquo; \in A$.
+Reversing the role of $\omega&amp;rsquo;$ and $\omega$ gives $\omega&amp;rsquo; \in A$ implies that $\omega \in A$. This shows that $\omega$
+and $\omega&amp;rsquo;$ are $\mathscr{F}_\tau$-equivalent.&lt;/p&gt;
 </description>
     </item>
     
@@ -354,7 +362,7 @@ $$&lt;/p&gt;
 $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align*}
-\bar{x_j} = n^{-1}\sum_{i = 1}^n x_{ij}, \quad s_j^2 = \frac{1}{n - 1}\sum_{i = 1}^n(x_{ij} - \bar{x_j})^2, j = 1, \ldots, p, \tag{3.4}
+\bar{x}_j = n^{-1}\sum_{i = 1}^n x_{ij}, \quad s_j^2 = \frac{1}{n - 1}\sum_{i = 1}^n(x_{ij} - \bar{x}_j)^2, j = 1, \ldots, p, \tag{3.4}
 \end{align*}
 $$&lt;/p&gt;
 &lt;p&gt;$$

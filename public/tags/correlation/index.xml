@@ -70,7 +70,7 @@ $$&lt;/p&gt;
 $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align*}
-\bar{x_j} = n^{-1}\sum_{i = 1}^n x_{ij}, \quad s_j^2 = \frac{1}{n - 1}\sum_{i = 1}^n(x_{ij} - \bar{x_j})^2, j = 1, \ldots, p, \tag{3.4}
+\bar{x}_j = n^{-1}\sum_{i = 1}^n x_{ij}, \quad s_j^2 = \frac{1}{n - 1}\sum_{i = 1}^n(x_{ij} - \bar{x}_j)^2, j = 1, \ldots, p, \tag{3.4}
 \end{align*}
 $$&lt;/p&gt;
 &lt;p&gt;$$
