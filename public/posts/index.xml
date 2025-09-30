@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Zhanxiong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Characterization of the sigma-field associated with a stopping time</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2025-09-06-stoppingtime/</link>
+      <pubDate>Sat, 06 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2025-09-06-stoppingtime/</guid>
+      <description>&lt;p&gt;In Section 35 of &lt;em&gt;Probability and Measure&lt;/em&gt;, after defining the $\sigma$-field $\mathscr{F}_\tau$ associated with a stopping time $\tau$, Billingsley wrote:&lt;/p&gt;
+&lt;p&gt;If $\tau(\omega) &amp;lt; \infty$ for all $\omega$ and $\mathscr{F}&lt;em&gt;n = \sigma(X_1, \ldots, X_n)$,
+then $I_A(\omega) = I_A(\omega&amp;rsquo;)$ for all $A$ in $\mathscr{F}$ if and only if $X_i(\omega_1) = X_i(\omega_2)$ for $i \leq \tau(\omega_1) = \tau(\omega_2)$: The information in $\mathscr{F}$
+consists of values $\tau(\omega), X_1(\omega), \ldots, X&lt;/em&gt;{\tau(\omega)}(\omega)$.&lt;/p&gt;
+&lt;p&gt;How to verify this statement?&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Rendering Images in GitHub Pages</title>
       <link>http://localhost:1313/ZX_BLOG/posts/2025-06-10-hugoimages/</link>
@@ -46,7 +60,14 @@
 &lt;blockquote&gt;
 &lt;p&gt;For any random elements $\xi \perp \eta$ in $S, T$ and a measurable function $f: S \times T \to U$, where $S, T, U$ are Borel, define $X = f(\xi, \eta)$. Then $\mathcal{L}(X \mid \xi) = \mathcal{L}\{f(x, \eta)\}|_{x = \xi}$ a.s.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Here &amp;ldquo;$\mathcal{L}(X)$ / $\mathcal{L}(X \mid \xi)$&amp;rdquo; denotes the law (i.e., distribution) of $X$ / conditional law of $X$ given $\xi$. To apply this result, simply let $\xi = X_{t - 1}, \eta = Z_t$, and $X = X_t = \sqrt{1 - \beta_t}X_{t - 1} + \sqrt{\beta_t}Z_t$. If you are interested in the proof to this lemma, check the reference by yourself.&lt;/p&gt;
-&lt;p&gt;For the direction $(a) \Rightarrow (b)$, it suffices to prove the conditional distribution of $Z_t := \beta_t^{-1/2}(X_t - \sqrt{1 - \beta_t}X_{t - 1})$ given $X_{t - 1}$ is $N(0, I)$, hence it is independent of $X_{t - 1}$. To this end, we can apply Theorem 8.5(ii) in the same reference (which concerns with the disintegration of the joint distribution of $(X_{t - 1}, X_t)$).  By this theorem, for a Borel set $H \in \mathscr{R}^n$, we have (where the notation $aH + b$ denotes the set ${ax + b: x \in H}$):
+&lt;p&gt;For the direction $(a) \Rightarrow (b)$, it suffices to prove the conditional distribution of $Z_t := \beta_t^{-1/2}(X_t - \sqrt{1 - \beta_t}X_{t - 1})$ given $X_{t - 1}$ is $N(0, I)$, hence it is independent of $X_{t - 1}$. To this end, we can apply Theorem 8.5(ii) in the same reference (which concerns with the disintegration of the joint distribution of $(X_{t - 1}, X_t)$):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (conditional distributions, disintegration) Let $\xi, \eta$ be random elements in $S, T$, where $T$ is Borel.  Then $\mathcal{L}(\xi, \eta) = \mathcal{L}(\xi) \otimes \mu$ for a probability kernel $\mu: S \to T$, where $\mu$ is unique a.e. $\mathcal{L}(\xi)$ and satisfies&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$\mathcal{L}(\eta \mid \xi) = \mu(\xi, \cdot)$ a.s.,&lt;/li&gt;
+&lt;li&gt;$E\{f(\xi, \eta) \mid \xi\} = \int \mu(\xi, dt)f(\xi, t)$, a.s., $f \geq 0$.&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;p&gt;By this theorem, for a Borel set $H \in \mathscr{R}^n$, we have (where the notation $aH + b$ denotes the set ${ax + b: x \in H}$):
 $$
 \begin{align*}
 &amp;amp;\ P(Z_t \in H \mid X_{t - 1}) \\

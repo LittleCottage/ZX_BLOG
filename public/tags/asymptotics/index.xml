@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Measure Theory on Zhanxiong&#39;s Blog</title>
-    <link>http://localhost:1313/ZX_BLOG/tags/measure-theory/</link>
-    <description>Recent content in Measure Theory on Zhanxiong&#39;s Blog</description>
+    <title>Asymptotics on Zhanxiong&#39;s Blog</title>
+    <link>http://localhost:1313/ZX_BLOG/tags/asymptotics/</link>
+    <description>Recent content in Asymptotics on Zhanxiong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/tags/measure-theory/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/tags/asymptotics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Gaussian Kernel Properties</title>
-      <link>http://localhost:1313/ZX_BLOG/posts/2025-06-09-gaussian/</link>
-      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <title>Martingale Limit Theorems and its Applications</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2025-08-24-martlimit/</link>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/ZX_BLOG/posts/2025-06-09-gaussian/</guid>
+      <guid>http://localhost:1313/ZX_BLOG/posts/2025-08-24-martlimit/</guid>
       <description>&lt;p&gt;Your question can be reframed as: why the statement (a) $X_t \mid X_{t - 1} \sim N(\sqrt{1 - \beta_t}X_{t - 1}, \beta_t I)$ is equivalent to the statement (b) $X_t$ has the representation $X_t = \sqrt{1 - \beta_t}X_{t - 1} + \sqrt{\beta_t}Z_t$, where $Z_t \sim N(0, I)$ is independent of $X_{t - 1}$?&lt;/p&gt;
 &lt;p&gt;While Thomas Lumley has given you a heuristic answer, I agree that you are absolutely entitled to request a more rigorous argument.&lt;/p&gt;
 &lt;p&gt;The direction $(b) \Rightarrow (a)$ is an immediate application of the theorem below (Lemma 8.7 in Foundations of Modern Probability (3rd edition) by Olav Kallenberg):&lt;/p&gt;

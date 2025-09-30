@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Self Study on Zhanxiong&#39;s Blog</title>
+    <link>http://localhost:1313/ZX_BLOG/tags/self-study/</link>
+    <description>Recent content in Self Study on Zhanxiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/tags/self-study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Characterization of the sigma-field associated with a stopping time</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2025-09-06-stoppingtime/</link>
+      <pubDate>Sat, 06 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2025-09-06-stoppingtime/</guid>
+      <description>&lt;p&gt;In Section 35 of &lt;em&gt;Probability and Measure&lt;/em&gt;, after defining the $\sigma$-field $\mathscr{F}_\tau$ associated with a stopping time $\tau$, Billingsley wrote:&lt;/p&gt;
+&lt;p&gt;If $\tau(\omega) &amp;lt; \infty$ for all $\omega$ and $\mathscr{F}&lt;em&gt;n = \sigma(X_1, \ldots, X_n)$,
+then $I_A(\omega) = I_A(\omega&amp;rsquo;)$ for all $A$ in $\mathscr{F}$ if and only if $X_i(\omega_1) = X_i(\omega_2)$ for $i \leq \tau(\omega_1) = \tau(\omega_2)$: The information in $\mathscr{F}$
+consists of values $\tau(\omega), X_1(\omega), \ldots, X&lt;/em&gt;{\tau(\omega)}(\omega)$.&lt;/p&gt;
+&lt;p&gt;How to verify this statement?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
