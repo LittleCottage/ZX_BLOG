@@ -8,7 +8,7 @@ tags: ["Self Study", "Martingales"]
 
 In Section 35 of *Probability and Measure*, after defining the $\sigma$-field $\mathscr{F}_\tau$ associated with a stopping time $\tau$, Billingsley wrote:
 
-> If $\tau(\omega) < \infty$ for all $\omega$ and $\mathscr{F}_n = \sigma(X_1, \ldots, X_n)$, then $I_A(\omega) = I_A(\omega')$ for all $A$ in $\mathscr{F}$ if and only if $X_i(\omega_1) = X_i(\omega_2)$ for $i \leq \tau(\omega_1) = \tau(\omega_2)$: The information in $\mathscr{F}$ consists of values $\tau(\omega), X_1(\omega), \ldots, X\_{\tau(\omega)}(\omega)$.
+> If $\tau(\omega) < \infty$ for all $\omega$ and $\mathscr{F}_n = \sigma(X_1, \ldots, X_n)$, then $I_A(\omega) = I_A(\omega')$ for all $A$ in $\mathscr{F}\_\tau$ if and only if $X_i(\omega) = X_i(\omega')$ for $i \leq \tau(\omega) = \tau(\omega')$: The information in $\mathscr{F}\_\tau$ consists of values $\tau(\omega), X_1(\omega), \ldots, X\_{\tau(\omega)}(\omega)$.
 
 How to verify this statement? Below is the proof.
 
