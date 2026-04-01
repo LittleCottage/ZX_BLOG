@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linear Algebra on Zhanxiong&#39;s Blog</title>
+    <link>http://localhost:1313/ZX_BLOG/tags/linear-algebra/</link>
+    <description>Recent content in Linear Algebra on Zhanxiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/tags/linear-algebra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Clarification on the Linear Algebra of Principal Component Analysis</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2026-04-01-pca/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2026-04-01-pca/</guid>
+      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Principal Component Analysis (PCA) is a dimension reduction technique that receives applications in many scientific disciplines.&lt;br&gt;
+Nevertheless, I have seen so many non-rigorous, if not completely wrong, usages on its associated terminologies, math derivations,
+interpretations, etc.  The aim of this article is to clarify some most fundamental concepts and definitions related to PCA.&lt;/p&gt;
+&lt;h2 id=&#34;principal-component-directions-vs-principal-components&#34;&gt;Principal Component Directions vs. Principal Components&lt;/h2&gt;
+&lt;p&gt;This is arguably the most serious misconception in PCA, even among very experienced statisticians and machine learning engineers (e.g. ^[1])&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

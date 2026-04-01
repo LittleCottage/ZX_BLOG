@@ -6,7 +6,23 @@
     <description>Recent content in Posts on Zhanxiong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Clarification on the Linear Algebra of Principal Component Analysis</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2026-04-01-pca/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2026-04-01-pca/</guid>
+      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Principal Component Analysis (PCA) is a dimension reduction technique that receives applications in many scientific disciplines.&lt;br&gt;
+Nevertheless, I have seen so many non-rigorous, if not completely wrong, usages on its associated terminologies, math derivations,
+interpretations, etc.  The aim of this article is to clarify some most fundamental concepts and definitions related to PCA.&lt;/p&gt;
+&lt;h2 id=&#34;principal-component-directions-vs-principal-components&#34;&gt;Principal Component Directions vs. Principal Components&lt;/h2&gt;
+&lt;p&gt;This is arguably the most serious misconception in PCA, even among very experienced statisticians and machine learning engineers (e.g. ^[1])&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+</description>
+    </item>
+    
     <item>
       <title>Characterization of the sigma-field associated with a stopping time</title>
       <link>http://localhost:1313/ZX_BLOG/posts/2025-09-06-stoppingtime/</link>
@@ -15,7 +31,7 @@
       <guid>http://localhost:1313/ZX_BLOG/posts/2025-09-06-stoppingtime/</guid>
       <description>&lt;p&gt;In Section 35 of &lt;em&gt;Probability and Measure&lt;/em&gt;, after defining the $\sigma$-field $\mathscr{F}_\tau$ associated with a stopping time $\tau$, Billingsley wrote:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;If $\tau(\omega) &amp;lt; \infty$ for all $\omega$ and $\mathscr{F}_n = \sigma(X_1, \ldots, X_n)$, then $I_A(\omega) = I_A(\omega&amp;rsquo;)$ for all $A$ in $\mathscr{F}$ if and only if $X_i(\omega_1) = X_i(\omega_2)$ for $i \leq \tau(\omega_1) = \tau(\omega_2)$: The information in $\mathscr{F}$ consists of values $\tau(\omega), X_1(\omega), \ldots, X_{\tau(\omega)}(\omega)$.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;If $\tau(\omega) &amp;lt; \infty$ for all $\omega$ and $\mathscr{F}_n = \sigma(X_1, \ldots, X_n)$, then $I_A(\omega) = I_A(\omega&amp;rsquo;)$ for all $A$ in $\mathscr{F}_\tau$ if and only if $X_i(\omega) = X_i(\omega&amp;rsquo;)$ for $i \leq \tau(\omega) = \tau(\omega&amp;rsquo;)$: The information in $\mathscr{F}_\tau$ consists of values $\tau(\omega), X_1(\omega), \ldots, X_{\tau(\omega)}(\omega)$.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;How to verify this statement? Below is the proof.&lt;/p&gt;
 &lt;p&gt;Suppose $I_A(\omega) = I_A(\omega&amp;rsquo;)$ for all $A \in \mathscr{F}_\tau$. If $\tau(\omega) \neq \tau(\omega&amp;rsquo;)$, say $\tau(\omega) = i &amp;lt; j = \tau(\omega&amp;rsquo;)$,
 then for the set $A = [\tau = j] \in \mathscr{F}_\tau$, we have $\omega \not\in A$ but $\omega&amp;rsquo; \in A$, contradiction.  Hence $\tau(\omega) = \tau(\omega&amp;rsquo;) =: N$.  Next, we show that $X_i(\omega) = X_i(\omega&amp;rsquo;)$ for $i \leq N$.  Consider the
