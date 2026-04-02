@@ -85,7 +85,7 @@ Nevertheless, I have seen so many non-rigorous, if not completely wrong, usages 
 Principal Component Directions vs. Principal Components This is arguably the most serious misconception in PCA, even experienced statisticians and machine learning engineers confused them: practitioners tend to referring “principal component directions” as “principal components” or vice versa (e.g. [1], p. 224). Such confusion is very analogous to linear algebra students who cannot distinguish “basis” and “coordinates (under that basis)” clearly. A deep understanding on this linear algebra topic would help clarify on the differences and connections between “PC directions” and “PCs”.">
   <meta itemprop="datePublished" content="2026-04-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-04-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1227">
+  <meta itemprop="wordCount" content="1224">
   <meta itemprop="keywords" content="Multivariate Analysis,Linear Algebra">
 
   
@@ -190,7 +190,7 @@ Principal Component Directions vs. Principal Components This is arguably the mos
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          1227 words
+          1224 words
         </span>
       
       
@@ -278,13 +278,13 @@ $$
 v^\top X^\top Xv = \sum_{i = 1}^n(x_i^\top v - \bar{z})^2 = (n - 1)\hat{\sigma}^2(x_1^\top v, \ldots, x_n^\top v).
 \end{align*}
 $$</p>
-<p>That $v_1, \ldots, v_p$ defined above are $p$ orthogonal eigenvectors of the matrix $X^\top X$ is a classical linear algebra result so I won&rsquo;t repeat the proof here (for example,
+<p>That $v_1, \ldots, v_p$ defined above are $p$ orthonormal eigenvectors of the matrix $X^\top X$ is a classical linear algebra result so I won&rsquo;t repeat the proof here (for example,
 see [<a href='#li1988linear'>2</a>], Section 7.6, Theorem 4). It is also well-known that $v_j^\top X^\top Xv_j$ equals to the $j$-th eigenvalue of $X^\top X$, where $\lambda_1 \geq
-\lambda_2 \geq \cdots \geq \lambda_n &gt; 0$.</p>
-<p>As mentioned earlier and should be crystal clear now, the <strong>principal component directions</strong> $\{v_1, \ldots, v_p\}$ form an orthogonal basis of $\mathbb{R}^p$,
+\lambda_2 \geq \cdots \geq \lambda_p &gt; 0$.</p>
+<p>As mentioned earlier and should be crystal clear now, the <strong>principal component directions</strong> $\{v_1, \ldots, v_p\}$ form an orthonormal basis of $\mathbb{R}^p$,
 whereas the <strong>principal components</strong> are collections of magnitudes of projected observations onto all the basis vectors. Although this is not strictly the same as the relationship
-between &ldquo;basis&rdquo; and &ldquo;coordinates&rdquo; in linear algebra, the principal components do play the role of coordinates when we try to express the original datum under the new orthogonal
-basis (i.e., the principal component directions). For instance, we can talk about the coordinates of one observation vector $x_i$ under $V := \{v_1, \ldots, v_p\}$, which can
+between &ldquo;basis&rdquo; and &ldquo;coordinates&rdquo; in linear algebra, the principal components do play the role of coordinates when we try to express an original datum under the new orthonormal
+basis (i.e., the principal component directions). For instance, we can talk about the coordinate of $x_i$ under $V := \{v_1, \ldots, v_p\}$, which can
 be expressed in terms of principal components as follows:
 $$
 \begin{align*}
