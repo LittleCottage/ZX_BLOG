@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Factor Analysis on Zhanxiong&#39;s Blog</title>
+    <link>http://localhost:1313/ZX_BLOG/tags/factor-analysis/</link>
+    <description>Recent content in Factor Analysis on Zhanxiong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/tags/factor-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Definitions and the Interpretation of Partial Correlation</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2026-04-02-partialcorrelation/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2026-04-02-partialcorrelation/</guid>
+      <description>&lt;p&gt;$\newcommand{\real}{\mathbb{R}}$
+$\newcommand{\bX}{\boldsymbol{X}}$
+$\newcommand{\Cov}{\operatorname{Cov}}$
+$\newcommand{\diag}{\operatorname{diag}}$
+$\newcommand{\sp}{\operatorname{\overline{sp}}}$
+$\newcommand{\tr}{\operatorname{tr}}$&lt;/p&gt;
+&lt;h2 id=&#34;zhanxiongs-definition&#34;&gt;Zhanxiong&amp;rsquo;s Definition&lt;/h2&gt;
+&lt;p&gt;First let me present the (seemingly) most general mathematical definition of the &lt;em&gt;partial correlation of a random vector
+$\bX_1 \in \real^p$ given another random vector $\bX_2 \in \real^q$&lt;/em&gt;. This definition I presented here incorporated three
+sources: Brockwell and Davis ([&lt;a href=&#39;#brockwell2006time&#39;&gt;1&lt;/a&gt;]), Mulaik ([&lt;a href=&#39;mulaik2009foundations&#39;&gt;2&lt;/a&gt;]), and
+Muirhead ([&lt;a href=&#39;muirhead1982aspects&#39;&gt;3&lt;/a&gt;]). Later I will explain how my definition connects to definitions proposed
+by these authors.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Definition (Partial Correlation).&lt;/strong&gt; Let $\bX_1 \in \real^p$ and $\bX_2 \in \real^q$ be two non-degenerate zero-mean random vectors
+with covariance matrix $\begin{bmatrix} \Sigma_{11} &amp;amp; \Sigma_{12} \\ \Sigma_{21} &amp;amp; \Sigma_{22} \end{bmatrix}$, where
+$\Sigma_{11}$ and $\Sigma_{22}$ are order $p$ and order $q$ matrices respectively.
+Denote by $\Sigma_{11 \cdot 2} \in \real^{p \times p}$ the variance-covariance matrix of $\bX_1 - P_{\sp(\bX_2)}(\bX_1)$, where
+$P_{\sp(\bX_2)}(\bX_1)$ is the &lt;em&gt;best linear predictor of $\bX_1$ in terms of $\bX_2 := (X_{21}, \ldots, X_{2q})$&lt;/em&gt;
+(see [&lt;a href=&#39;#brockwell2006time&#39;&gt;1&lt;/a&gt;], Definition 2.7.4). The &lt;em&gt;partial correlation (matrix)&lt;/em&gt; of $\bX_1$ given (or adjusted for, or
+after partialling out) $\bX_2$ is defined as
+$$
+\begin{equation*}
+\rho_{11 \cdot 2} = \diag(\Sigma_{11\cdot 2})^{-1/2}\Sigma_{11\cdot 2}\diag(\Sigma_{11\cdot 2})^{-1/2}.
+\end{equation*}
+$$&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;a-closed-form-expression-of-rho_11cdot-2-in-l2-space&#34;&gt;A Closed-form Expression of $\rho_{11\cdot 2}$ (in $L^2$ space)&lt;/h2&gt;
+&lt;p&gt;In Definition 2.7.4 of [&lt;a href=&#39;#brockwell2006time&#39;&gt;1&lt;/a&gt;], $\bX_1$ is a scalar-valued random variable, i.e., $p = 1$, under which case
+$P_{\sp(\bX_2)}(X_1)$ is naturally defined as the projection ([&lt;a href=&#39;#brockwell2006time&#39;&gt;1&lt;/a&gt;], Theorem 2.3.1) of $X_1$ onto the closed
+subspace $\sp(\bX_2)$ in $L^2(\Omega, \mathscr{F}, P)$. When $\bX_1$ is a random vector from $\Omega$ to $\real^p$, the classical inner product space
+$L^2(\Omega, \mathscr{F}, P)$ needs to be generalized to $L^2(\Omega, \mathscr{F}, P; \real^p)$, which consists of all $X$ such that
+$E[\|X\|^2] = \int_\Omega \|X\|^2 dP &amp;lt; \infty$. Analogously, the inner product in $L^2(\Omega, \mathscr{F}, P; \real^p)$ can be defined
+as $\langle \xi, \eta\rangle = E[\xi^\top\eta]$. Since a linear predictor of $\bX_1$ in terms of $\bX_2$ by definition is $B\bX_2$ for
+some non-random matrix $B \in \real^{p \times q}$ (or a linear transformation $B \in L(\real^q, \real^p)$), the best linear predictor of $\bX_1$
+in terms of $\bX_2$, say $\hat{\bX}_1 = B_0\bX_2$, must minimize the squared-norm $\|\bX_1 - B\bX_2\|^2$ in $L^2(\Omega, \mathscr{F}, P; \real^p)$
+over $B \in \real^{p \times q}$. Furthermore, since&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align*}
+\|\bX_1 - B\bX_2\|^2 &amp;amp;= E[(\bX_1 - B\bX_2)^\top(\bX_1 - B\bX_2)] = E[\tr\left((\bX_1 - B\bX_2)(\bX_1 - B\bX_2)^\top\right)] \\
+&amp;amp;= \tr\left(\Sigma_{11} - B\Sigma_{21} - \Sigma_{12}B^\top + B\Sigma_{22}B^\top\right)
+= \tr\left(\Sigma_{11} - 2B\Sigma_{21} + B\Sigma_{22}B^\top\right) \\
+&amp;amp;= \tr\left(\Sigma_{11} - 2A\Sigma_{22}^{-1/2}\Sigma_{21} + AA^\top\right) \tag{Set $A = B\Sigma_{22}^{1/2}$} \\
+&amp;amp;= \tr\left((A - \Sigma_{12}\Sigma_{22}^{-1/2})(A - \Sigma_{12}\Sigma_{22}^{-1/2})^\top + \Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21} \right) \\
+&amp;amp;\geq \tr\left(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21} \right)
+\end{align*}&lt;br&gt;
+$$
+with the equality holds if and only if $A = \Sigma_{12}\Sigma_{22}^{-1/2}$, or equivalently $B = \Sigma_{12}\Sigma_{22}^{-1}$, we conclude that
+$B_0 = \Sigma_{12}\Sigma_{22}^{-1}$. Consequently, it follows that
+$$ \rho_{11\cdot 2} =  \diag(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})^{-1/2}(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})\diag(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})^{-1/2}. \tag{1}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;special-cases-and-discussion&#34;&gt;Special Cases and Discussion&lt;/h2&gt;
+&lt;p&gt;Perhaps the most important special case of the general formula (1) is the &amp;ldquo;partial correlation coefficient between two variables $\xi$ and $\eta$ given another $k$ variables
+$Z_1, \ldots, Z_k$&amp;rdquo;, which is of primary interest in (linear) regression models where $\xi \leftarrow Y$, $\eta \leftarrow X_0$ for one explanatory variable, and
+$(Z_1, \ldots, Z_k)$ is assigned to be remaining explanatory variables entering the model. Denote the variance-covariance matrix of $(\xi, \eta, Z_1, \ldots, Z_k)$ by
+$$
+\Sigma = \begin{bmatrix}
+\sigma_{\xi\xi}  &amp;amp; \sigma_{\xi\eta}  &amp;amp; \sigma_{\xi 1}  &amp;amp; \cdots &amp;amp; \sigma_{\xi k}  \\
+\sigma_{\eta\xi} &amp;amp; \sigma_{\eta\eta} &amp;amp; \sigma_{\eta 1} &amp;amp; \cdots &amp;amp; \sigma_{\eta k} \\
+\sigma_{\xi 1}   &amp;amp; \sigma_{\eta 1}     &amp;amp; \sigma_{11}     &amp;amp; \cdots &amp;amp; \sigma_{1k}     \\
+\vdots           &amp;amp; \vdots            &amp;amp; \vdots          &amp;amp; \ddots &amp;amp; \vdots          \\
+\sigma_{\xi k}   &amp;amp; \sigma_{\eta k}     &amp;amp; \sigma_{1k}     &amp;amp; \cdots &amp;amp; \sigma_{kk}  &lt;br&gt;
+\end{bmatrix} =:
+\begin{bmatrix}
+\Sigma_{11} &amp;amp; \Sigma_{12} \\
+\Sigma_{21} &amp;amp; \Sigma_{22}
+\end{bmatrix},
+$$
+where $\Sigma_{11}$ is the northwestern order $2$ block matrix in $\Sigma$. The partial correlation between $\xi$ and $\eta$ given $(Z_1, \ldots, Z_k)$ is then intuitively defined
+as the $(1, 2)$ (or $(2, 1)$) entry of the matrix in (1), namely, with $e_1 = (1, 0)^\top$ and $e_2 = (0, 1)^\top$:
+$$
+\begin{align*}
+\rho_{\xi\eta \cdot Z_1\cdots Z_k} &amp;amp;:=
+\frac{e_1^\top(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})e_2}
+{\sqrt{e_1^\top(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})e_1 \cdot e_2^\top(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})e_2}} \\
+&amp;amp;= \frac{M_{12}/\det(\Sigma_{22})}{\sqrt{M_{22}/\det(\Sigma_{22}) \cdot M_{11}/\det(\Sigma_{22})}} = \frac{M_{12}}{\sqrt{M_{11}M_{22}}}, \tag{2}
+\end{align*}
+$$
+where $M_{ij}$ denotes the $(i, j)$ minor of $\Sigma$. (2) agrees with Equation (4.46) in [&lt;a href=&#39;mulaik2009foundations&#39;&gt;2&lt;/a&gt;].
+The penultimate step in the derivation above follows from the Schur&amp;rsquo;s identity $\det(A) = \det(A_{22})\det(A_{11} - A_{12}A_{22}^{-1}A_{21})$ for a block matrix
+$\begin{bmatrix} A_{11} &amp;amp; A_{12} \\ A_{21} &amp;amp; A_{22}\end{bmatrix}$ in which $A_{22}$ is invertible.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-interpret-the-qualifier-partial&#34;&gt;How to Interpret the Qualifier &amp;ldquo;Partial&amp;rdquo;?&lt;/h2&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;a id=&#34;brockwell2006time&#34;&gt;&lt;/a&gt;
+[1] Brockwell, Peter J., Davis, Richard A. (2006). Time Series: Theory and Methods (2nd ed.). Springer Science+Business Media, LLC.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;mulaik2009foundations&#34;&gt;&lt;/a&gt;
+[2] Mulaik, Stanley A. (2009). Foundations of Factor Analysis. CRC Press.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;muirhead1982aspects&#34;&gt;&lt;/a&gt;
+[3] Muirhead, Robb J. (1982). Aspects of Multivariate Statistical Theory. John Wiley &amp;amp; Sons, Inc.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

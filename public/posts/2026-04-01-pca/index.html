@@ -67,7 +67,7 @@ Principal Component Directions vs. Principal Components This is arguably the mos
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-04-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-02T15:44:27+08:00">
     <meta property="article:tag" content="Multivariate Analysis">
     <meta property="article:tag" content="Linear Algebra">
 
@@ -84,8 +84,8 @@ Background Principal Component Analysis (PCA) is a dimension reduction technique
 Nevertheless, I have seen so many non-rigorous, if not completely wrong, usages on its associated terminologies, math derivations, interpretations, etc. The aim of this article is to clarify some most fundamental concepts and definitions related to PCA.
 Principal Component Directions vs. Principal Components This is arguably the most serious misconception in PCA, even experienced statisticians and machine learning engineers confused them: practitioners tend to referring “principal component directions” as “principal components” or vice versa (e.g. [1], p. 224). Such confusion is very analogous to linear algebra students who cannot distinguish “basis” and “coordinates (under that basis)” clearly. A deep understanding on this linear algebra topic would help clarify on the differences and connections between “PC directions” and “PCs”.">
   <meta itemprop="datePublished" content="2026-04-01T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-04-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1224">
+  <meta itemprop="dateModified" content="2026-04-02T15:44:27+08:00">
+  <meta itemprop="wordCount" content="2597">
   <meta itemprop="keywords" content="Multivariate Analysis,Linear Algebra">
 
   
@@ -190,7 +190,7 @@ Principal Component Directions vs. Principal Components This is arguably the mos
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          1224 words
+          2597 words
         </span>
       
       
@@ -203,7 +203,7 @@ Principal Component Directions vs. Principal Components This is arguably the mos
           <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          ~6 mins
+          ~13 mins
         </span>
       
     </div>
@@ -230,6 +230,7 @@ Principal Component Directions vs. Principal Components This is arguably the mos
     <li><a href="#background">Background</a></li>
     <li><a href="#principal-component-directions-vs-principal-components">Principal Component Directions vs. Principal Components</a></li>
     <li><a href="#determining-pc-directions-via-svd">Determining PC Directions via SVD</a></li>
+    <li><a href="#further-discussions">Further Discussions</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -303,6 +304,31 @@ $x_i$ under $\{\varepsilon_1, \ldots, \varepsilon_p\}$. Albeit the coordinate $(
 definition is $n$-dimensional), it can be and should be interpreted as $(\pi_i(z_1), \ldots, \pi_i(z_p))$, where $\pi_i: \mathbb{R}^n \to \mathbb{R}$ is the $i$-th
 <em>coordinate function</em> (see [<a href='#rudin1976principles'>3</a>], p. 88). That is, the coordinate of $x_i$ under $V$ is a function of combined principal components
 $\{z_1, \ldots, z_p\}$. In this sense, the principal components may still be loosely understood as coordinates with respect to the new basis $V$.</p>
+<p>$(1)$ and $(2)$ can be better reconciled if we take a traditional linear model perspective. For clarity, rewrite the observed design matrix as $\mathcal{X} = \begin{bmatrix}
+\boldsymbol{x}^{(1)\top} \\ \vdots \\ \boldsymbol{x}^{(n)\top}\end{bmatrix} = \begin{bmatrix} \boldsymbol{x}_1 &amp; \cdots &amp; \boldsymbol{x}_p\end{bmatrix}$,
+and rewrite $z_j$ as $\boldsymbol{z}_j$, $j = 1, \ldots, p$ (also boldface all the other vectors). $(1)$ and $(2)$ can then be rewritten as
+\begin{align*}
+\boldsymbol{x}^{(i)} = \langle \boldsymbol{x}^{(i)}, \boldsymbol{v}_1\rangle \boldsymbol{v}_1 + \cdots + \langle \boldsymbol{x}^{(i)}, \boldsymbol{v}_p\rangle \boldsymbol{v}_p
+= \boldsymbol{z}_1[i]\boldsymbol{v}_1 + \cdots + \boldsymbol{z}_p[i]\boldsymbol{v}_p. \tag{1&rsquo;}
+\end{align*}
+\begin{align*}
+\boldsymbol{x}^{(i)} = \langle \boldsymbol{x}^{(i)}, \boldsymbol{\varepsilon}_1\rangle \boldsymbol{\varepsilon}_1 + \cdots + \langle \boldsymbol{x}^{(i)},
+\boldsymbol{\varepsilon}_p\rangle\boldsymbol{\varepsilon}_p
+= \boldsymbol{x}_1[i]\boldsymbol{\varepsilon}_1 + \cdots + \boldsymbol{x}_p[i]\boldsymbol{\varepsilon}_p. \tag{2&rsquo;}
+\end{align*}</p>
+<p>For the purpose of dimension-reduction or visualization, terms with index bigger than $k$, where $k \ll p$, are dropped, yielding the approximation
+\begin{equation*}
+\boldsymbol{x}^{(i)} \approx \boldsymbol{z}_1[i]\boldsymbol{v}_1 + \cdots + \boldsymbol{z}_k[i]\boldsymbol{v}_k.
+\end{equation*}
+In a visualization task, the $p$-dim point $\boldsymbol{x}^{(i)}$ is then represented by a $k$-dim point $(\boldsymbol{z}_1[i], \ldots, \boldsymbol{z}_k[i]) \in \mathbb{R}^k$
+(typically $k = 2$ or $3$). One common abuse of notation is that in such plots, the axes are usually labeled as &ldquo;PC1, PC2&rdquo; (e.g., [<a href='#hardle2024applied'>4</a>], Figure 11.3),
+which is better to be replaced by &ldquo;PCD1, PCD2&rdquo;.  This is the very purpose of this vignette &ndash; to clarify the difference between the &ldquo;PC&rdquo; and the &ldquo;PC Direction&rdquo;.</p>
+<p>How much is the approximation error? At the population-level (see Section 4 for details), the analysis goes as follows: denote $X^\top\upsilon_1\upsilon_1 + \cdots +
+X^\top\upsilon_k\upsilon_k$ by $\hat{X}$, then the remainder term $\delta := X - \hat{X} = \sum_{l = k + 1}^pX^\top\upsilon_l\upsilon_l$. By the orthogonality, it then
+follows that $\delta^2 = \sum_{l = k + 1}^p\upsilon^\top XX^\top\upsilon$, whence the expected squared error is $E[\delta^2] = \sum_{l = k + 1}^p\upsilon^\top\Sigma\upsilon
+= \sum_{l = k + 1}^p\lambda_l$. This gives a better explanation to the rule of choosing $k$ such that $\sum_{l = 1}^k \lambda_l/\sum_{l = 1}^p\lambda_l$ should be large (say,
+greater than $90\%$) &ndash; the $k$ should be sufficiently large such that the <em>relative approximation error</em> $E[\delta^2]/E[\|X||^2]$ is bounded below by $10\%$. I found this
+reasoning is much more intuitive than the traditional &ldquo;percentage of total variation explained&rdquo; explanation.</p>
 <h2 id="determining-pc-directions-via-svd">Determining PC Directions via SVD</h2>
 <p>In the machine learning literature, PC directions are usually determined by finding the singular value decomposition (SVD) of $X$ directly (as opposed to computing $X^\top X$
 first, then finding the spectral decomposition of $X^\top X$, which is the way I learned as a undergraduate student). More explicitly, we have</p>
@@ -312,6 +338,93 @@ are all the $p$ PC directions with respect to $X$.</p></blockquote>
 <p>The proof is straightforward:  Given $X = U\Sigma V^\top$, it follows that $X^\top X = V \Sigma^\top U^\top U\Sigma V^\top = V\Sigma^\top\Sigma V^\top$, namely, the spectral
 decomposition of $X^\top X$ is $V\Sigma^\top\Sigma V^\top$.  This means that columns of $V$ are all the eigenvectors of $X^\top X$, thereby they are $p$ principal component
 directions with respect to $X$.</p>
+<h2 id="further-discussions">Further Discussions</h2>
+<p>PCA is usually taught directly in terms of the definition above, but it also has a classical routine that gives its population-level formulation first.  For a given
+$p$-dimensional zero-mean random vector $X = (X_1, \ldots, X_p)^\top$ with covariance matrix $\Sigma$, the <em>first population-level principle component direction</em> $\upsilon_1$ is a unit
+vector in $\mathbb{R}^p$ such that the variance of the <em>standardized linear combination</em> of $X$ is maximized, namely,
+\begin{equation*}
+\upsilon_1 = \argmax_{\|\upsilon\| = 1}\operatorname{Var}(\upsilon^\top X) = \argmax_{\|\upsilon\| = 1}\upsilon^\top\Sigma\upsilon.
+\end{equation*}
+It seems not very intuitive why maximizing $\operatorname{Var}(\upsilon^\top X)$ is chosen to be the objective
+function (at least to me). In comparison, it is much more intuitive to choose the unit direction $\upsilon$ such
+that the expected distance (aka, norm) in $\mathbb{R}^p$ between $X$ and its projection onto the space $L(\upsilon)$, which equals to $\langle X, \upsilon\rangle\upsilon = \upsilon^\top X \upsilon = \upsilon\upsilon^\top X$, is minimized. That is, $\upsilon_1$ minimizes
+\begin{equation*}
+E[\|X - \upsilon\upsilon^\top X\|^2] = E[\|(I_{(p)} - \upsilon\upsilon^\top)X\|^2]
+= E[X^\top(I_{(p)} - \upsilon\upsilon^\top)X]
+= \operatorname{tr}((I_{(p)} - \upsilon\upsilon^\top)\Sigma)
+= p - \upsilon^\top\Sigma\upsilon.
+\end{equation*}
+Therefore to minimize $\|X - \upsilon\upsilon^\top X\|^2$ is equivalent to maximize $\upsilon^\top\Sigma\upsilon$. At the population-level, it seems hard to find the
+counterpart of the &ldquo;first principal component $z_1$&rdquo;, probably due to that $z_1$ is observation-dependent (for instance, it is $n$-dimensional, where $n$ is sample size).
+If we have to, it might not be a bad idea to define $Z_1 := \upsilon_1^\top X$ as the <em>first population-level principal component</em>, but it is a scalar.</p>
+<p>Now suppose we want to approximate $X$ by a projection of $X$ onto a 2-dimensional subspace $V_2$ (in $\mathbb{R}^p$) containing $L(\upsilon_1)$.
+Clearly, such subspace can be expressed as $L(\upsilon_1, \upsilon)$ with $\upsilon \perp \upsilon_1$ and $\|\upsilon\| = 1$, and the projection
+of $X$ (at this moment simply view $X$ as a vector in $\mathbb{R}^p$ instead of a random vector in the $L^2$ space) onto $L(\upsilon_1, \upsilon)$ is
+$\hat{X} = \langle\upsilon_1, X\rangle\upsilon_1 + \langle\upsilon, X\rangle\upsilon = (\upsilon_1\upsilon_1^\top + \upsilon\upsilon^\top)X$. As before,
+a reasonable choice of $\upsilon_2$ should be such that the expected distance between $X$ and $\hat{X}$ is minimized, i.e., $\upsilon_2$ minimizes
+\begin{equation*}
+E[\|X - \hat{X}\|^2] = E[X^\top(I_{(p)} - \upsilon_1\upsilon_1^\top - \upsilon\upsilon^\top)X]
+= p - \upsilon_1^\top\Sigma\upsilon_1 - \upsilon^\top\Sigma\upsilon.
+\end{equation*}
+Hence $\upsilon_2 = \argmax_{\|\upsilon\| = 1, \upsilon \perp \upsilon_1}\upsilon^\top\Sigma\upsilon$.</p>
+<p>The population-level principal component directions $\upsilon_3, \ldots, \upsilon_p$ can be obtained as their standard forms by a similar argument.</p>
+<p>Now that we have defined $p$ population-level PC directions by maximizing the quadratic form $\upsilon^\top\Sigma\upsilon$ under different constraints,
+it is convenient to derive sample-level PC directions (those we are familiar with) by replacing &ldquo;$\Sigma$&rdquo; in the objective function with its estimate
+$\mathcal{X}^\top\mathcal{X}/n$, where $\mathcal{X} = [x_{ij}] \in \mathbb{R}^{n \times p}$ is a centered data matrix (confusingly, the $\mathcal{X}$ here
+is exactly the &ldquo;$X$&rdquo; in preceding sections). This classical recipe ubiquitously adopted in statistical inference
+then brings us back to the definition of &ldquo;principal component directions&rdquo; in the definition in Section 2.</p>
+<p>What is less transparent is the connection between the &ldquo;population-level PC $Z_j$&rdquo; (later we will update its definition) and the &ldquo;sample-level PC $z_j$&rdquo;. To this end, let
+\begin{equation*}
+Z := \begin{bmatrix} Z_1 \\ Z_2 \\ \vdots \\ Z_p \end{bmatrix} = \Upsilon^\top X  \tag{$\dagger$}
+\end{equation*}
+be the <em>PC transformation</em> of $X$ ([<a href='#hardle2024applied'>4</a>], Theorem 11.1), which is well-defined at the population-level. From another (more easily generalizable)
+perspective, we view $\Upsilon^\top$ as a linear transformation from $\mathbb{R}^p$ to $\mathbb{R}^p$, which sends the coordinate of $X$ under the standard basis
+$\mathscr{B}_1 = \{\varepsilon_1, \ldots, \varepsilon_p\}$ to the coordinate of $X$ under the new orthonormal basis $\mathscr{B}_2 = \{\upsilon_1, \ldots, \upsilon_p\}$.
+In linear algebra terminology, since $\Upsilon$ is the <em>transition matrix</em> from $\mathscr{B}_1$ to $\mathscr{B}_2$, $(\dagger)$ is exactly the
+<em>coordinate transformation equation</em> ([<a href='#li1988linear'>2</a>], Theorem 4.4.2) from $\mathscr{B}_1$ to $\mathscr{B}_2$ (note $\Upsilon$ is orthogonal so
+$\Upsilon^{-1} = \Upsilon^\top$).</p>
+<p>But we know <em>principal components</em> are vectors in $\mathbb{R}^n$, where $n$ is the number of observations drawn from $X$. As such, for $n$ i.i.d. random vectors
+$X^{(1)}, \ldots, X^{(n)} \sim X$, let $Z^{(i)} = \begin{bmatrix} Z_1^{(i)} &amp; \cdots &amp; Z_p^{(i)}\end{bmatrix}^\top$ be the coordinate of $X^{(i)}$ with respect to
+$\mathscr{B}_2$, $i = 1, \ldots, n$. Then we have
+\begin{align*}
+\begin{bmatrix} X^{(1)} &amp; \cdots &amp; X^{(n)}\end{bmatrix} &amp;=
+\begin{bmatrix} \varepsilon_1 &amp; \cdots &amp; \varepsilon_p \end{bmatrix}
+\begin{bmatrix} X_1^{(1)} &amp; \cdots &amp; X_1^{(n)} \\ X_2^{(1)} &amp; \cdots &amp; X_2^{(n)} \\ \vdots &amp; \ddots &amp; \vdots \\ X_p^{(1)} &amp; \cdots &amp; X_p^{(n)}\end{bmatrix}
+=: \begin{bmatrix} \varepsilon_1 &amp; \cdots &amp; \varepsilon_p \end{bmatrix}
+\begin{bmatrix} \boldsymbol{X}_1^\top \\ \vdots \\ \boldsymbol{X}_p^\top \end{bmatrix} \\
+&amp;= \begin{bmatrix} \upsilon_1 &amp; \cdots &amp; \upsilon_p\end{bmatrix}
+\begin{bmatrix} Z_1^{(1)} &amp; \cdots &amp; Z_1^{(n)} \\ Z_2^{(1)} &amp; \cdots &amp; Z_2^{(n)} \\ \vdots &amp; \ddots &amp; \vdots \\ Z_p^{(1)} &amp; \cdots &amp; Z_p^{(n)}\end{bmatrix}
+=: \begin{bmatrix} \upsilon_1 &amp; \cdots &amp; \upsilon_p \end{bmatrix}
+\begin{bmatrix} \boldsymbol{Z}_1^\top \\ \vdots \\ \boldsymbol{Z}_p^\top \end{bmatrix}.
+\end{align*}
+This implies that
+\begin{equation}
+\begin{bmatrix} \boldsymbol{Z}_1 &amp; \cdots &amp; \boldsymbol{Z}_p \end{bmatrix} = \begin{bmatrix} \boldsymbol{X}_1 &amp; \cdots &amp; \boldsymbol{X}_p\end{bmatrix}\Upsilon. \tag{3}
+\end{equation}
+So if we view $\{\boldsymbol{X}_1, \ldots, \boldsymbol{X}_p\}$ as a basis of the $p$-dimensional subspace $S$ in $\mathbb{R}^n$ (as for the geometry of linear models), this means
+that $\{\boldsymbol{Z}_1, \ldots, \boldsymbol{Z}_p\}$ is also a basis of $S$. Therefore, at the (semi-)population-level, $\{\boldsymbol{Z}_1, \ldots, \boldsymbol{Z}_p\}$ may
+be recognized as a new basis of $S$ which is obtained by rotating the original basis $\{\boldsymbol{X}_1, \ldots, \boldsymbol{X}_p\}$. The sample-level principal components
+$\{z_1, \ldots, z_p\}$ thus can be regarded as its sample-level counterpart after substituting $\begin{bmatrix} \boldsymbol{X}_1 &amp; \cdots &amp; \boldsymbol{X}_p\end{bmatrix}$ and
+$\Upsilon$ in $(3)$ for the observed design matrix $\mathcal{X}$ and estimate $\hat{\Upsilon} = \begin{bmatrix} v_1 &amp; \cdots &amp; v_p\end{bmatrix}$ respectively, i.e., $z_j =
+\hat{\boldsymbol{Z}}_j = \mathcal{X}v_j$, $j = 1, \ldots, p$.</p>
+ <!-- $\\{\Upsilon^\top X^{(1)}, \ldots, \Upsilon^\top X^{(n)}\\}$
+ is a collection of $n$ coordinates of $X^{(1)}, \ldots, X^{(n)}$ under $\mathscr{B}_2$. It then follows that the *$j$-th population-level principal component* (this can be 
+ stated as a definition) is the value of coordinate function $\pi_j$ evaluated at $\\{\Upsilon^\top X^{(1)}, \ldots, \Upsilon^\top X^{(n)}\\}$, i.e., 
+ \begin{align*}
+ \boldsymbol{Z}_j := \begin{bmatrix} \pi_j(\Upsilon^\top X^{(1)}) \\\\ \pi_j(\Upsilon^\top X^{(2)}) \\\\ \vdots \\\\ \pi_j(\Upsilon^\top X^{(n)}) \end{bmatrix}.
+ \end{align*}
+ The $j$-th sample-level principal component is then naturally defined after estimating $\Upsilon$ by $V$, and replacing hypothetical random vectors with observed 
+ $x_1, \ldots, x_n$, i.e., 
+ \begin{align*}
+ \begin{bmatrix} \pi_j(V^\top x_1) \\\\ \pi_j(V^\top x_2) \\\\ \vdots \\\\ \pi_j(V^\top x_n) \end{bmatrix},
+ \end{align*}
+ which is exactly $z_j$ as defined in Section 2. -->
+<p>Lastly, let&rsquo;s just mention an interesting representation of $z_j$ which is $z_j = \sqrt{\lambda_j}u_j$, where $u_j$ is the $j$-th column of $U$ in
+the SVD of $\mathcal{X} = U\Lambda V^\top = \sum_{l = 1}^p \sqrt{\lambda_l}u_lv_l^\top$ (assume $\operatorname{rank}(\mathcal{X}) = p$). The proof is easy: by definition,
+\begin{equation}
+z_j = \mathcal{X}v_j = \sum_{l = 1}^p\sqrt{\lambda_l}u_lv_l^\top v_j = \sqrt{\lambda_j}u_j. \tag{4}
+\end{equation}</p>
+<p>Comparing (4) with the $j$-th principal component direction $v_j$, it appears that the PC direction and the PC itself possess some sort of <em>duality</em>.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Unlike the traditional perspective of considering PCA as the most important dimension-reduction technique, I am more inclined to view it as a data-driven basis-searching algorithm
 that enjoys the aforementioned properties.  It is precisely the orthogonality and the rank ordering of the new basis that endows the merits of the PCA in applications.</p>
@@ -322,6 +435,8 @@ that enjoys the aforementioned properties.  It is precisely the orthogonality an
 [2] Li, J. and Zha, J. (1988). Linear Algebra (in Chinese). University of Science and Technology of China Press.</p>
 <p><a id="rudin1976principles"></a>
 [3] Rudin, W. (1976). Principles of Mathematical Analysis (3rd ed.). McGraw-Hill, Inc.</p>
+<p><a id="hardle2024applied"></a>
+[4] Härdle, W.K., Simar,  L. and Fengler M.R. (2024). Applied Multivariate Statistical Analysis (6th ed.). Springer International Publishing.</p>
 
     
   </article>
@@ -416,7 +531,7 @@ that enjoys the aforementioned properties.  It is precisely the orthogonality an
     <a class="link" href="http://localhost:1313/ZX_BLOG/posts/2025-09-06-stoppingtime/" title="Characterization of the sigma-field associated with a stopping time">← prev</a>
     
     
-    <a></a>
+    <a class="link" href="http://localhost:1313/ZX_BLOG/posts/2026-04-02-partialcorrelation/" title="On Definitions and the Interpretation of Partial Correlation">next →</a>
     
   </div>
   <div class="comment">

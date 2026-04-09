@@ -6,20 +6,276 @@
     <description>Recent content in Statistics on Zhanxiong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ZX_BLOG/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Definitions and the Interpretation of Partial Correlation</title>
+      <link>http://localhost:1313/ZX_BLOG/posts/2026-04-02-partialcorrelation/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ZX_BLOG/posts/2026-04-02-partialcorrelation/</guid>
+      <description>&lt;p&gt;$\newcommand{\real}{\mathbb{R}}$
+$\newcommand{\bX}{\boldsymbol{X}}$
+$\newcommand{\Cov}{\operatorname{Cov}}$
+$\newcommand{\diag}{\operatorname{diag}}$
+$\newcommand{\sp}{\operatorname{\overline{sp}}}$
+$\newcommand{\tr}{\operatorname{tr}}$&lt;/p&gt;
+&lt;h2 id=&#34;zhanxiongs-definition&#34;&gt;Zhanxiong&amp;rsquo;s Definition&lt;/h2&gt;
+&lt;p&gt;First let me present the (seemingly) most general mathematical definition of the &lt;em&gt;partial correlation of a random vector
+$\bX_1 \in \real^p$ given another random vector $\bX_2 \in \real^q$&lt;/em&gt;. This definition I presented here incorporated three
+sources: Brockwell and Davis ([&lt;a href=&#39;#brockwell2006time&#39;&gt;1&lt;/a&gt;]), Mulaik ([&lt;a href=&#39;mulaik2009foundations&#39;&gt;2&lt;/a&gt;]), and
+Muirhead ([&lt;a href=&#39;muirhead1982aspects&#39;&gt;3&lt;/a&gt;]). Later I will explain how my definition connects to definitions proposed
+by these authors.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Definition (Partial Correlation).&lt;/strong&gt; Let $\bX_1 \in \real^p$ and $\bX_2 \in \real^q$ be two non-degenerate zero-mean random vectors
+with covariance matrix $\begin{bmatrix} \Sigma_{11} &amp;amp; \Sigma_{12} \\ \Sigma_{21} &amp;amp; \Sigma_{22} \end{bmatrix}$, where
+$\Sigma_{11}$ and $\Sigma_{22}$ are order $p$ and order $q$ matrices respectively.
+Denote by $\Sigma_{11 \cdot 2} \in \real^{p \times p}$ the variance-covariance matrix of $\bX_1 - P_{\sp(\bX_2)}(\bX_1)$, where
+$P_{\sp(\bX_2)}(\bX_1)$ is the &lt;em&gt;best linear predictor of $\bX_1$ in terms of $\bX_2 := (X_{21}, \ldots, X_{2q})$&lt;/em&gt;
+(see [&lt;a href=&#39;#brockwell2006time&#39;&gt;1&lt;/a&gt;], Definition 2.7.4). The &lt;em&gt;partial correlation (matrix)&lt;/em&gt; of $\bX_1$ given (or adjusted for, or
+after partialling out) $\bX_2$ is defined as
+$$
+\begin{equation*}
+\rho_{11 \cdot 2} = \diag(\Sigma_{11\cdot 2})^{-1/2}\Sigma_{11\cdot 2}\diag(\Sigma_{11\cdot 2})^{-1/2}.
+\end{equation*}
+$$&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;a-closed-form-expression-of-rho_11cdot-2-in-l2-space&#34;&gt;A Closed-form Expression of $\rho_{11\cdot 2}$ (in $L^2$ space)&lt;/h2&gt;
+&lt;p&gt;In Definition 2.7.4 of [&lt;a href=&#39;#brockwell2006time&#39;&gt;1&lt;/a&gt;], $\bX_1$ is a scalar-valued random variable, i.e., $p = 1$, under which case
+$P_{\sp(\bX_2)}(X_1)$ is naturally defined as the projection ([&lt;a href=&#39;#brockwell2006time&#39;&gt;1&lt;/a&gt;], Theorem 2.3.1) of $X_1$ onto the closed
+subspace $\sp(\bX_2)$ in $L^2(\Omega, \mathscr{F}, P)$. When $\bX_1$ is a random vector from $\Omega$ to $\real^p$, the classical inner product space
+$L^2(\Omega, \mathscr{F}, P)$ needs to be generalized to $L^2(\Omega, \mathscr{F}, P; \real^p)$, which consists of all $X$ such that
+$E[\|X\|^2] = \int_\Omega \|X\|^2 dP &amp;lt; \infty$. Analogously, the inner product in $L^2(\Omega, \mathscr{F}, P; \real^p)$ can be defined
+as $\langle \xi, \eta\rangle = E[\xi^\top\eta]$. Since a linear predictor of $\bX_1$ in terms of $\bX_2$ by definition is $B\bX_2$ for
+some non-random matrix $B \in \real^{p \times q}$ (or a linear transformation $B \in L(\real^q, \real^p)$), the best linear predictor of $\bX_1$
+in terms of $\bX_2$, say $\hat{\bX}_1 = B_0\bX_2$, must minimize the squared-norm $\|\bX_1 - B\bX_2\|^2$ in $L^2(\Omega, \mathscr{F}, P; \real^p)$
+over $B \in \real^{p \times q}$. Furthermore, since&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align*}
+\|\bX_1 - B\bX_2\|^2 &amp;amp;= E[(\bX_1 - B\bX_2)^\top(\bX_1 - B\bX_2)] = E[\tr\left((\bX_1 - B\bX_2)(\bX_1 - B\bX_2)^\top\right)] \\
+&amp;amp;= \tr\left(\Sigma_{11} - B\Sigma_{21} - \Sigma_{12}B^\top + B\Sigma_{22}B^\top\right)
+= \tr\left(\Sigma_{11} - 2B\Sigma_{21} + B\Sigma_{22}B^\top\right) \\
+&amp;amp;= \tr\left(\Sigma_{11} - 2A\Sigma_{22}^{-1/2}\Sigma_{21} + AA^\top\right) \tag{Set $A = B\Sigma_{22}^{1/2}$} \\
+&amp;amp;= \tr\left((A - \Sigma_{12}\Sigma_{22}^{-1/2})(A - \Sigma_{12}\Sigma_{22}^{-1/2})^\top + \Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21} \right) \\
+&amp;amp;\geq \tr\left(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21} \right)
+\end{align*}&lt;br&gt;
+$$
+with the equality holds if and only if $A = \Sigma_{12}\Sigma_{22}^{-1/2}$, or equivalently $B = \Sigma_{12}\Sigma_{22}^{-1}$, we conclude that
+$B_0 = \Sigma_{12}\Sigma_{22}^{-1}$. Consequently, it follows that
+$$ \rho_{11\cdot 2} =  \diag(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})^{-1/2}(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})\diag(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})^{-1/2}. \tag{1}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;special-cases-and-discussion&#34;&gt;Special Cases and Discussion&lt;/h2&gt;
+&lt;p&gt;Perhaps the most important special case of the general formula (1) is the &amp;ldquo;partial correlation coefficient between two variables $\xi$ and $\eta$ given another $k$ variables
+$Z_1, \ldots, Z_k$&amp;rdquo;, which is of primary interest in (linear) regression models where $\xi \leftarrow Y$, $\eta \leftarrow X_0$ for one explanatory variable, and
+$(Z_1, \ldots, Z_k)$ is assigned to be remaining explanatory variables entering the model. Denote the variance-covariance matrix of $(\xi, \eta, Z_1, \ldots, Z_k)$ by
+$$
+\Sigma = \begin{bmatrix}
+\sigma_{\xi\xi}  &amp;amp; \sigma_{\xi\eta}  &amp;amp; \sigma_{\xi 1}  &amp;amp; \cdots &amp;amp; \sigma_{\xi k}  \\
+\sigma_{\eta\xi} &amp;amp; \sigma_{\eta\eta} &amp;amp; \sigma_{\eta 1} &amp;amp; \cdots &amp;amp; \sigma_{\eta k} \\
+\sigma_{\xi 1}   &amp;amp; \sigma_{\eta 1}     &amp;amp; \sigma_{11}     &amp;amp; \cdots &amp;amp; \sigma_{1k}     \\
+\vdots           &amp;amp; \vdots            &amp;amp; \vdots          &amp;amp; \ddots &amp;amp; \vdots          \\
+\sigma_{\xi k}   &amp;amp; \sigma_{\eta k}     &amp;amp; \sigma_{1k}     &amp;amp; \cdots &amp;amp; \sigma_{kk}  &lt;br&gt;
+\end{bmatrix} =:
+\begin{bmatrix}
+\Sigma_{11} &amp;amp; \Sigma_{12} \\
+\Sigma_{21} &amp;amp; \Sigma_{22}
+\end{bmatrix},
+$$
+where $\Sigma_{11}$ is the northwestern order $2$ block matrix in $\Sigma$. The partial correlation between $\xi$ and $\eta$ given $(Z_1, \ldots, Z_k)$ is then intuitively defined
+as the $(1, 2)$ (or $(2, 1)$) entry of the matrix in (1), namely, with $e_1 = (1, 0)^\top$ and $e_2 = (0, 1)^\top$:
+$$
+\begin{align*}
+\rho_{\xi\eta \cdot Z_1\cdots Z_k} &amp;amp;:=
+\frac{e_1^\top(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})e_2}
+{\sqrt{e_1^\top(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})e_1 \cdot e_2^\top(\Sigma_{11} - \Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21})e_2}} \\
+&amp;amp;= \frac{M_{12}/\det(\Sigma_{22})}{\sqrt{M_{22}/\det(\Sigma_{22}) \cdot M_{11}/\det(\Sigma_{22})}} = \frac{M_{12}}{\sqrt{M_{11}M_{22}}}, \tag{2}
+\end{align*}
+$$
+where $M_{ij}$ denotes the $(i, j)$ minor of $\Sigma$. (2) agrees with Equation (4.46) in [&lt;a href=&#39;mulaik2009foundations&#39;&gt;2&lt;/a&gt;].
+The penultimate step in the derivation above follows from the Schur&amp;rsquo;s identity $\det(A) = \det(A_{22})\det(A_{11} - A_{12}A_{22}^{-1}A_{21})$ for a block matrix
+$\begin{bmatrix} A_{11} &amp;amp; A_{12} \\ A_{21} &amp;amp; A_{22}\end{bmatrix}$ in which $A_{22}$ is invertible.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-interpret-the-qualifier-partial&#34;&gt;How to Interpret the Qualifier &amp;ldquo;Partial&amp;rdquo;?&lt;/h2&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;a id=&#34;brockwell2006time&#34;&gt;&lt;/a&gt;
+[1] Brockwell, Peter J., Davis, Richard A. (2006). Time Series: Theory and Methods (2nd ed.). Springer Science+Business Media, LLC.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;mulaik2009foundations&#34;&gt;&lt;/a&gt;
+[2] Mulaik, Stanley A. (2009). Foundations of Factor Analysis. CRC Press.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;muirhead1982aspects&#34;&gt;&lt;/a&gt;
+[3] Muirhead, Robb J. (1982). Aspects of Multivariate Statistical Theory. John Wiley &amp;amp; Sons, Inc.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>A Clarification on the Linear Algebra of Principal Component Analysis</title>
       <link>http://localhost:1313/ZX_BLOG/posts/2026-04-01-pca/</link>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/ZX_BLOG/posts/2026-04-01-pca/</guid>
-      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+      <description>&lt;p&gt;$$\newcommand{\argmax}{\operatorname*{argmax}} $$&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;Principal Component Analysis (PCA) is a dimension reduction technique that receives applications in many scientific disciplines.&lt;br&gt;
 Nevertheless, I have seen so many non-rigorous, if not completely wrong, usages on its associated terminologies, math derivations,
 interpretations, etc.  The aim of this article is to clarify some most fundamental concepts and definitions related to PCA.&lt;/p&gt;
 &lt;h2 id=&#34;principal-component-directions-vs-principal-components&#34;&gt;Principal Component Directions vs. Principal Components&lt;/h2&gt;
-&lt;p&gt;This is arguably the most serious misconception in PCA, even among very experienced statisticians and machine learning engineers (e.g. ^[1])&lt;/p&gt;
+&lt;p&gt;This is arguably the most serious misconception in PCA, even experienced statisticians and machine learning engineers confused them:
+practitioners tend to referring &amp;ldquo;principal component directions&amp;rdquo; as &amp;ldquo;principal components&amp;rdquo; or vice versa
+(e.g. [&lt;a href=&#39;#geron2022handson&#39;&gt;1&lt;/a&gt;], p. 224). Such confusion is very analogous to linear algebra students who cannot distinguish
+&amp;ldquo;basis&amp;rdquo; and &amp;ldquo;coordinates (under that basis)&amp;rdquo; clearly.  A deep understanding on this linear algebra topic would help clarify on the
+differences and connections between &amp;ldquo;PC directions&amp;rdquo; and &amp;ldquo;PCs&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;To understand the core idea underlying the PCA, it is also important to clarify the meaning of the term &amp;ldquo;variance&amp;rdquo; under the PCA context.
+The &amp;ldquo;variance&amp;rdquo; appeared in the sentence such as &amp;ldquo;we are looking for the direction $v_1$ such that the variance of $Xv_1$ is maximized&amp;rdquo;
+should be interpreted as the &lt;strong&gt;sample variance&lt;/strong&gt; of the dataset $D_1 := \{\langle x_1, v_1\rangle, \ldots, \langle x_n, v_1\rangle\}$.
+In other words, the PCA does not require assuming any underlying distribution of the data matrix
+$X = \begin{bmatrix} x_1^\top \\ \vdots \\ x_n^\top \end{bmatrix}$, as most statistical models do. This means that the PCA can be fully explained and demonstrated by
+linear algebra tools only without invoking any probability or statistics knowledge. In fact, as will be seen later, the term &amp;ldquo;variance&amp;rdquo; is
+completely superfluous and may be replaced with the more accurate and expressive term &amp;ldquo;norm&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;That said, let&amp;rsquo;s lay out classical definitions and procedures related to the PCA:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let $X = \begin{bmatrix} x_{ij}\end{bmatrix} = \begin{bmatrix} x_1^\top \\ \vdots \\ x_n^\top \end{bmatrix} \in \mathbb{R}^{n \times p}$ be a centered design matrix such that
+$\sum\limits_{i = 1}^n x_{ij} = 0$ for every $j \in \{1, \ldots, p\}$ (namely, $e^\top X = 0^\top$ where $e := (1, \ldots, 1) \in \mathbb{R}^n$). By definition, the
+&lt;strong&gt;first principal component direction&lt;/strong&gt; $v_1$ is a unit vector in $\mathbb{R}^p$ such that the Euclidean norm of the vector
+$(x_1^\top v, \ldots, x_n^\top v)^\top =: Xv$ is maximized over the unit sphere $\{v: \|v\| = 1\}$. In other words,&lt;/p&gt;
+&lt;p&gt;$$ v_1 = \argmax_{\|v\| = 1} \|Xv\|^2 = \argmax_{\|v\| = 1} v^\top X^\top X v.$$
+The vector $z_1 = Xv_1 = (x_1^\top v_1, \ldots, x_n^\top v_1)^\top \in \mathbb{R}^n$, which may be regarded as the collection of magnitudes of projections
+$x_1, \ldots, x_n$ onto the direction $v_1$, is called the &lt;strong&gt;first principal component&lt;/strong&gt; of $X$.&lt;/p&gt;
+&lt;p&gt;Having found $v_1, \ldots, v_{j - 1} \in \mathbb{R}^p$, the &lt;strong&gt;$j$-th principal component direction&lt;/strong&gt; $v_j$ is defined as (where $L(v_1, \ldots, v_{j - 1})$ is the subspace
+spanned by $\{v_1, \ldots, v_{j - 1}\}$):
+$$ v_j = \argmax_{\substack{\|v\| = 1 \\ v \perp L(v_1, \ldots, v_{j - 1})}} \|Xv\|^2, \quad j = 2, \ldots, p.$$
+Accordingly, $z_j = Xv_j$ is called the &lt;strong&gt;$j$-th principal component&lt;/strong&gt; of $X$.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;From the pure linear algebra perspective, the &amp;ldquo;centered&amp;rdquo; condition of $X$ is not essential &amp;ndash; without imposing it, $v_1, \ldots, v_n$ can be defined in exactly the same manner.
+The reason of requiring it is purely statistical: it is this condition that permits us to interpret the quadratic form $v^\top X^\top X v$ as &amp;ldquo;variance of the projected data&amp;rdquo;
+because the sample mean of $\{x_1^\top v, \ldots, x_n^\top v\}$ is given by $\bar{z} := \sum_{i = 1}^n x_i^\top v/n = e^\top Xv/n = 0$ whence
+$$
+\begin{align*}
+v^\top X^\top Xv = \sum_{i = 1}^n(x_i^\top v - \bar{z})^2 = (n - 1)\hat{\sigma}^2(x_1^\top v, \ldots, x_n^\top v).
+\end{align*}
+$$&lt;/p&gt;
+&lt;p&gt;That $v_1, \ldots, v_p$ defined above are $p$ orthonormal eigenvectors of the matrix $X^\top X$ is a classical linear algebra result so I won&amp;rsquo;t repeat the proof here (for example,
+see [&lt;a href=&#39;#li1988linear&#39;&gt;2&lt;/a&gt;], Section 7.6, Theorem 4). It is also well-known that $v_j^\top X^\top Xv_j$ equals to the $j$-th eigenvalue of $X^\top X$, where $\lambda_1 \geq
+\lambda_2 \geq \cdots \geq \lambda_p &amp;gt; 0$.&lt;/p&gt;
+&lt;p&gt;As mentioned earlier and should be crystal clear now, the &lt;strong&gt;principal component directions&lt;/strong&gt; $\{v_1, \ldots, v_p\}$ form an orthonormal basis of $\mathbb{R}^p$,
+whereas the &lt;strong&gt;principal components&lt;/strong&gt; are collections of magnitudes of projected observations onto all the basis vectors. Although this is not strictly the same as the relationship
+between &amp;ldquo;basis&amp;rdquo; and &amp;ldquo;coordinates&amp;rdquo; in linear algebra, the principal components do play the role of coordinates when we try to express an original datum under the new orthonormal
+basis (i.e., the principal component directions). For instance, we can talk about the coordinate of $x_i$ under $V := \{v_1, \ldots, v_p\}$, which can
+be expressed in terms of principal components as follows:
+$$
+\begin{align*}
+x_i = \langle x_i, v_1\rangle v_1 + \cdots + \langle x_i, v_p\rangle v_p = z_1[i]v_1 + \cdots + z_p[i]v_p, \tag{1}
+\end{align*}
+$$
+where $z[i]$ denotes the $i$-th component of $z$.&lt;/p&gt;
+&lt;p&gt;By comparison, under the natural basis $\{\varepsilon_1, \ldots, \varepsilon_p\}$ of $\mathbb{R}^p$, one has:
+$$
+\begin{align*}
+x_i = \langle x_i, \varepsilon_1\rangle \varepsilon_1 + \cdots + \langle x_i, \varepsilon_p\rangle \varepsilon_p = x_i[1]\varepsilon_1 + \cdots + x_i[p]\varepsilon_p. \tag{2}
+\end{align*}
+$$
+Comparing (1) and (2) would make a better sense of interpreting principal components as &amp;ldquo;coordinates&amp;rdquo;: in (2), $(x_i[1], \ldots, x_i[p])$ is exactly the coordinate of the vector
+$x_i$ under $\{\varepsilon_1, \ldots, \varepsilon_p\}$. Albeit the coordinate $(z_1[i], \ldots, z_p[i])$ of $x_i$ under $V$ is not any single principal component $z_j$ (which by
+definition is $n$-dimensional), it can be and should be interpreted as $(\pi_i(z_1), \ldots, \pi_i(z_p))$, where $\pi_i: \mathbb{R}^n \to \mathbb{R}$ is the $i$-th
+&lt;em&gt;coordinate function&lt;/em&gt; (see [&lt;a href=&#39;#rudin1976principles&#39;&gt;3&lt;/a&gt;], p. 88). That is, the coordinate of $x_i$ under $V$ is a function of combined principal components
+$\{z_1, \ldots, z_p\}$. In this sense, the principal components may still be loosely understood as coordinates with respect to the new basis $V$.&lt;/p&gt;
+&lt;h2 id=&#34;determining-pc-directions-via-svd&#34;&gt;Determining PC Directions via SVD&lt;/h2&gt;
+&lt;p&gt;In the machine learning literature, PC directions are usually determined by finding the singular value decomposition (SVD) of $X$ directly (as opposed to computing $X^\top X$
+first, then finding the spectral decomposition of $X^\top X$, which is the way I learned as a undergraduate student). More explicitly, we have&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let $X = U\Sigma V^\top$ be the SVD of $X$, where $U \in \mathbb{R}^{n \times n}$ and $V \in \mathbb{R}^{p \times p}$ are orthogonal matrices. Then the $p$ columns of $V$
+are all the $p$ PC directions with respect to $X$.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;The proof is straightforward:  Given $X = U\Sigma V^\top$, it follows that $X^\top X = V \Sigma^\top U^\top U\Sigma V^\top = V\Sigma^\top\Sigma V^\top$, namely, the spectral
+decomposition of $X^\top X$ is $V\Sigma^\top\Sigma V^\top$.  This means that columns of $V$ are all the eigenvectors of $X^\top X$, thereby they are $p$ principal component
+directions with respect to $X$.&lt;/p&gt;
+&lt;h2 id=&#34;further-discussions&#34;&gt;Further Discussions&lt;/h2&gt;
+&lt;p&gt;PCA is usually taught directly in terms of the definition above, but it also has a classical routine that gives its population-level formulation first.  For a given
+$p$-dimensional zero-mean random vector $X = (X_1, \ldots, X_p)^\top$ with covariance matrix $\Sigma$, the &lt;em&gt;first population-level principle component direction&lt;/em&gt; $\upsilon_1$ is a unit
+vector in $\mathbb{R}^p$ such that the variance of the &lt;em&gt;standardized linear combination&lt;/em&gt; of $X$ is maximized, namely,
+\begin{equation*}
+\upsilon_1 = \argmax_{\|\upsilon\| = 1}\operatorname{Var}(\upsilon^\top X) = \argmax_{\|\upsilon\| = 1}\upsilon^\top\Sigma\upsilon.
+\end{equation*}
+It seems not very intuitive why maximizing $\operatorname{Var}(\upsilon^\top X)$ is chosen to be the objective
+function (at least to me). In comparison, it is much more intuitive to choose the unit direction $\upsilon$ such
+that the expected distance (aka, norm) in $\mathbb{R}^p$ between $X$ and its projection onto the space $L(\upsilon)$, which equals to $\langle X, \upsilon\rangle\upsilon = \upsilon^\top X \upsilon = \upsilon\upsilon^\top X$, is minimized. That is, $\upsilon_1$ minimizes
+\begin{equation*}
+E[\|X - \upsilon\upsilon^\top X\|^2] = E[\|(I_{(p)} - \upsilon\upsilon^\top)X\|^2]
+= E[X^\top(I_{(p)} - \upsilon\upsilon^\top)X]
+= \operatorname{tr}((I_{(p)} - \upsilon\upsilon^\top)\Sigma)
+= p - \upsilon^\top\Sigma\upsilon.
+\end{equation*}
+Therefore to minimize $\|X - \upsilon\upsilon^\top X\|^2$ is equivalent to maximize $\upsilon^\top\Sigma\upsilon$. At the population-level, it seems hard to find the
+counterpart of the &amp;ldquo;first principal component $z_1$&amp;rdquo;, probably due to that $z_1$ is observation-dependent (for instance, it is $n$-dimensional, where $n$ is sample size).
+If we have to, it might not be a bad idea to define $Z_1 := \upsilon_1^\top X$ as the &lt;em&gt;first population-level principal component&lt;/em&gt;, but it is a scalar.&lt;/p&gt;
+&lt;p&gt;Now suppose we want to approximate $X$ by a projection of $X$ onto a 2-dimensional subspace $V_2$ (in $\mathbb{R}^p$) containing $L(\upsilon_1)$.
+Clearly, such subspace can be expressed as $L(\upsilon_1, \upsilon)$ with $\upsilon \perp \upsilon_1$ and $\|\upsilon_1\| = 1$, and the projection
+of $X$ (at this moment simply view $X$ as a vector in $\mathbb{R}^p$ instead of a random vector in the $L^2$ space) onto $L(\upsilon_1, \upsilon)$ is
+$\hat{X} = \langle\upsilon_1, X\rangle\upsilon_1 + \langle\upsilon, X\rangle\upsilon = (\upsilon_1\upsilon_1^\top + \upsilon\upsilon^\top)X$. As before,
+a reasonable choice of $\upsilon_2$ should be such that the expected distance between $X$ and $\hat{X}$ is minimized, i.e., $\upsilon_2$ minimizes
+\begin{equation*}
+E[\|X - \hat{X}\|^2] = E[X^\top(I_{(p)} - \upsilon_1\upsilon_1^\top - \upsilon\upsilon^\top)X]
+= p - \upsilon_1^\top\Sigma\upsilon_1 - \upsilon^\top\Sigma\upsilon.
+\end{equation*}
+Hence $\upsilon_2 = \argmax_{\|\upsilon\| = 1, \upsilon \perp \upsilon_1}\upsilon^\top\Sigma\upsilon$.&lt;/p&gt;
+&lt;p&gt;The population-level principal component directions $\upsilon_3, \ldots, \upsilon_p$ can be obtained as their standard forms by a similar argument.&lt;/p&gt;
+&lt;p&gt;Now that we have defined $p$ population-level PC directions by maximizing the quadratic form $\upsilon^\top\Sigma\upsilon$ under different constraints,
+it is convenient to derive sample-level PC directions (those we are familiar with) by replacing &amp;ldquo;$\Sigma$&amp;rdquo; in the objective function with its estimate
+$\mathcal{X}^\top\mathcal{X}/n$, where $\mathcal{X} = [x_{ij}] \in \mathbb{R}^{n \times p}$ is a centered data matrix (confusingly, the $\mathcal{X}$ here
+is exactly the &amp;ldquo;$X$&amp;rdquo; in preceding sections). This classical recipe ubiquitously adopted in statistical inference
+then brings us back to the definition of &amp;ldquo;principal component directions&amp;rdquo; in the definition in Section 2.&lt;/p&gt;
+&lt;p&gt;What is less transparent is the connection between the &amp;ldquo;population-level PC $Z_j$&amp;rdquo; (later we will update its definition) and the &amp;ldquo;sample-level PC $z_j$&amp;rdquo;. To this end, let
+\begin{equation*}
+Z := \begin{bmatrix} Z_1 \\ Z_2 \\ \vdots \\ Z_p \end{bmatrix} = \Upsilon^\top X  \tag{$\dagger$}
+\end{equation*}
+be the &lt;em&gt;PC transformation&lt;/em&gt; of $X$ ([&lt;a href=&#39;#hardle2024applied&#39;&gt;4&lt;/a&gt;], Theorem 11.1), which is well-defined at the population-level. From another (more easily generalizable)
+perspective, we view $\Upsilon^\top$ as a linear transformation from $\mathbb{R}^p$ to $\mathbb{R}^p$, which sends the coordinate of $X$ under the standard basis
+$\mathscr{B}_1 = \{\varepsilon_1, \ldots, \varepsilon_p\}$ to the coordinate of $X$ under the new orthonormal basis $\mathscr{B}_2 = \{\upsilon_1, \ldots, \upsilon_p\}$.
+In linear algebra terminology, since $\Upsilon$ is the &lt;em&gt;transition matrix&lt;/em&gt; from $\mathscr{B}_1$ to $\mathscr{B}_2$, $(\dagger)$ is exactly the
+&lt;em&gt;coordinate transformation equation&lt;/em&gt; ([&lt;a href=&#39;#li1988linear&#39;&gt;2&lt;/a&gt;], Theorem 4.4.2) from $\mathscr{B}_1$ to $\mathscr{B}_2$ (note $\Upsilon$ is orthogonal so
+$\Upsilon^{-1} = \Upsilon^\top$).&lt;/p&gt;
+&lt;p&gt;But we know &lt;em&gt;principal components&lt;/em&gt; are vectors in $\mathbb{R}^n$, where $n$ is the number of observations drawn from $X$. As such, for $n$ i.i.d. random vectors
+$X^{(1)}, \ldots, X^{(n)} \sim X$, let $Z^{(i)} = \begin{bmatrix} Z_1^{(i)} &amp;amp; \cdots &amp;amp; Z_p^{(i)}\end{bmatrix}^\top$ be the coordinate of $X^{(i)}$ with respect to
+$\mathscr{B}_2$, $i = 1, \ldots, n$. Then we have
+\begin{align*}
+\begin{bmatrix} X^{(1)} &amp;amp; \cdots &amp;amp; X^{(n)}\end{bmatrix} &amp;amp;=
+\begin{bmatrix} \varepsilon_1 &amp;amp; \cdots &amp;amp; \varepsilon_p \end{bmatrix}
+\begin{bmatrix} X_1^{(1)} &amp;amp; \cdots &amp;amp; X_1^{(n)} \\ X_2^{(1)} &amp;amp; \cdots &amp;amp; X_2^{(n)} \\ \vdots &amp;amp; \ddots &amp;amp; \vdots \\ X_p^{(1)} &amp;amp; \cdots &amp;amp; X_p^{(n)}\end{bmatrix}
+=: \begin{bmatrix} \varepsilon_1 &amp;amp; \cdots &amp;amp; \varepsilon_p \end{bmatrix}
+\begin{bmatrix} \boldsymbol{X}_1^\top \\ \vdots \\ \boldsymbol{X}_p^\top \end{bmatrix} \\
+&amp;amp;= \begin{bmatrix} \upsilon_1 &amp;amp; \cdots &amp;amp; \upsilon_p\end{bmatrix}
+\begin{bmatrix} Z_1^{(1)} &amp;amp; \cdots &amp;amp; Z_1^{(n)} \\ Z_2^{(1)} &amp;amp; \cdots &amp;amp; Z_2^{(n)} \\ \vdots &amp;amp; \ddots &amp;amp; \vdots \\ Z_p^{(1)} &amp;amp; \cdots &amp;amp; Z_p^{(n)}\end{bmatrix}
+=: \begin{bmatrix} \upsilon_1 &amp;amp; \cdots &amp;amp; \upsilon_p \end{bmatrix}
+\begin{bmatrix} \boldsymbol{Z}_1^\top \\ \vdots \\ \boldsymbol{Z}_p^\top \end{bmatrix}.
+\end{align*}
+This implies that $\begin{bmatrix} \boldsymbol{Z}_1 &amp;amp; \cdots &amp;amp; \boldsymbol{Z}_p \end{bmatrix} = \begin{bmatrix} \boldsymbol{X}_1 &amp;amp; \cdots &amp;amp; \boldsymbol{X}_p\end{bmatrix}\Upsilon$.
+So if we view $\{\boldsymbol{X}_1, \ldots, \boldsymbol{X}_p\}$ as a basis of the $p$-dimensional subspace $S$ in $\mathbb{R}^n$ (as for the geometry of linear models), this means
+that $\{\boldsymbol{Z}_1, \ldots, \boldsymbol{Z}_p\}$ is also a basis of $S$. Therefore, at the (semi-)population-level, $\{\boldsymbol{Z}_1, \ldots, \boldsymbol{Z}_p\}$ may
+be recognized as a new basis of $S$ which is obtained by rotating the original basis $\{\boldsymbol{X}_1, \ldots, \boldsymbol{X}_p\}$. The sample-level principal components
+$\{z_1, \ldots, z_p\}$ thus can be regarded as its sample-level counterpart after estimating&lt;/p&gt;
+ &lt;!-- $\\{\Upsilon^\top X^{(1)}, \ldots, \Upsilon^\top X^{(n)}\\}$
+ is a collection of $n$ coordinates of $X^{(1)}, \ldots, X^{(n)}$ under $\mathscr{B}_2$. It then follows that the *$j$-th population-level principal component* (this can be 
+ stated as a definition) is the value of coordinate function $\pi_j$ evaluated at $\\{\Upsilon^\top X^{(1)}, \ldots, \Upsilon^\top X^{(n)}\\}$, i.e., 
+ \begin{align*}
+ \boldsymbol{Z}_j := \begin{bmatrix} \pi_j(\Upsilon^\top X^{(1)}) \\\\ \pi_j(\Upsilon^\top X^{(2)}) \\\\ \vdots \\\\ \pi_j(\Upsilon^\top X^{(n)}) \end{bmatrix}.
+ \end{align*}
+ The $j$-th sample-level principal component is then naturally defined after estimating $\Upsilon$ by $V$, and replacing hypothetical random vectors with observed 
+ $x_1, \ldots, x_n$, i.e., 
+ \begin{align*}
+ \begin{bmatrix} \pi_j(V^\top x_1) \\\\ \pi_j(V^\top x_2) \\\\ \vdots \\\\ \pi_j(V^\top x_n) \end{bmatrix},
+ \end{align*}
+ which is exactly $z_j$ as defined in Section 2. --&gt;
+&lt;p&gt;Lastly, let&amp;rsquo;s just mention an interesting representation of $z_j$ which is $z_j = \sqrt{\lambda_j}u_j$, where $u_j$ is the $j$-th column of $U$ in
+the SVD of $\mathcal{X} = U\Lambda V^\top = \sum_{l = 1}^p \sqrt{\lambda_l}u_lv_l^\top$ (assume $\operatorname{rank}(\mathcal{X}) = p$). The proof is easy: by definition,
+\begin{equation}
+z_j = \mathcal{X}v_j = \sum_{l = 1}^p\sqrt{\lambda_l}u_lv_l^\top v_j = \sqrt{\lambda_j}u_j. \tag{3}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Comparing (3) with the $j$-th principal component direction $v_j$, it appears that the PC direction and the PC itself possess some sort of &lt;em&gt;duality&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Unlike the traditional perspective of considering PCA as the most important dimension-reduction technique, I am more inclined to view it as a data-driven basis-searching algorithm
+that enjoys the aforementioned properties.  It is precisely the orthogonality and the rank ordering of the new basis that endows the merits of the PCA in applications.&lt;/p&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;a id=&#34;geron2022handson&#34;&gt;&lt;/a&gt;
+[1] Géron, A. (2022). Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow (3rd ed.). O&amp;rsquo;Reilly Media.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;li1988linear&#34;&gt;&lt;/a&gt;
+[2] Li, J. and Zha, J. (1988). Linear Algebra (in Chinese). University of Science and Technology of China Press.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;rudin1976principles&#34;&gt;&lt;/a&gt;
+[3] Rudin, W. (1976). Principles of Mathematical Analysis (3rd ed.). McGraw-Hill, Inc.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;hardle2024applied&#34;&gt;&lt;/a&gt;
+[4] Härdle, W.K., Simar,  L. and Fengler M.R. (2024). Applied Multivariate Statistical Analysis (6th ed.). Springer International Publishing.&lt;/p&gt;
 </description>
     </item>
     
